@@ -1,0 +1,264 @@
+\documentclass[a4paper]{article}
+
+\makeatletter
+\title{Invarianti e Colorazioni}\let\Title\@title
+\author{Andrea Gallese}\let\Author\@author
+\date{\today}\let\Date\@date
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{faktor}
+\usepackage{wasysym}
+
+\usepackage[margin=1.5cm]{geometry}
+\usepackage{fancyhdr}
+\usepackage{subfig}
+\usepackage{multirow}
+
+\usepackage{lipsum}
+\usepackage{titlesec}
+\usepackage{multicol}
+\usepackage{setspace}
+\usepackage{mdframed}
+\usepackage{enumitem}
+
+% Comando Intitolante
+\newcommand{\Intitola}{\begin{center}
+		\vspace*{0,5 cm}
+		{\Huge \textsc{\Title}} \\
+		\vspace{0,5 cm}
+		\textsc{\Author} \hspace{1cm} \textsc{\Date}
+		\thispagestyle{empty}
+		\vspace{0,7 cm}
+\end{center}}
+
+% Formato Teoremi, Dimostrazioni, Definizioni
+\newtheorem{theorem}{Teorema}[section]
+\theoremstyle{remark}
+\newtheorem*{remark}{Osservazione}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definizione}
+\renewcommand\qedsymbol{$\clubsuit$}
+
+% Frontespizio e piè di pagina
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\textsf{\Author}}
+\chead{\textbf{\textsf{\Title}}}
+\lhead{\textsf{\today}}
+
+% Per avere le sezioni con le lettere
+\renewcommand{\thesection}{\Alph{section}}
+
+%Comandi specifici
+\newcommand{\Aut}[1]{\mathrm{Aut}\left( #1 \right)}
+\newcommand{\Int}[1]{\mathrm{Int}\left( #1 \right)}
+\newcommand{\Orb}[1]{\mathcal{O}rb\left( #1 \right)}
+\newcommand{\Stab}[1]{\mathcal{S}tab\left( #1 \right)}
+
+\newcommand{\fun}[5]{\begin{align*}
+	#1 \colon #2 &\to #3 \\
+	#4 &\mapsto #5
+	\end{align*}}
+
+% indentazione
+\setlength{\parindent}{0pt}
+
+% multicols
+\usepackage{multicol}
+\setlength\columnsep{20pt}
+\setlength{\columnseprule}{0,5pt}
+
+% Per disegnare diagrammi commuatativi
+\usepackage{tikz-cd}
+
+% Serve a decidere il bullet delle liste puntate
+\renewcommand\labelitemi{$ \blacktriangleright $}
+
+\newcommand{\subscript}[2]{$#1  #2$}
+
+\begin{document}
+\Intitola
+\small
+
+\begin{multicols}{2}
+	\textsf{Inizierei con un problema.} \\
+	
+	\textbf{Problema 1.} A circle is divided into six sectors. Then the numbers 1, 0, 1, 0, 0, 0 are written into the sectors (counterclockwise, say). You may increase two neighboring numbers by 1. Is it possible to equalize all numbers by a sequence of such steps? \\
+	
+	\textsf{Seguito da una pausa per lasciare a provare a risolverlo, prima di mostrare la soluzione.} \\
+	
+	\emph{Soluzione.} Suppose $ a_1,\dots,a_6 $ are the numbers currently on the sectors. Then \begin{equation*}
+	I =
+	a_1 -a_2 +a_3 -a_4 +a_5 -a6
+	\end{equation*} is an invariant. Initially $ I = 2 $. The goal $ I = 0 $ cannot
+	be reached. \\
+	
+	\textsf{Cos'è appena successo? Un problema apparentemente molto difficile, mostrare la non esistenza di una strategia vincente, è stato risolto con una sola, singola, semplice, osservazione. E' stato sufficiente costruire un'\textit{invariante}, ovvero una quantità che rimane fissa durante tutto il problema, che non cambia all'agire delle mosse permesse.} \\
+	
+	\textsf{Questa è una strategia molto utile, vediamo altri esempi.}\\
+	
+	\textbf{Problema 2.} In 1961, the British theoretical physicist M.E. Fisher solved a famous and very
+	tough problem. He showed that an 8 $ \times $ 8 chessboard can be covered by 2 $ \times $ 1
+	dominoes in 24 $ \times $ 9012 or 12'988'816 ways. Now let us cut out two diagonally
+	opposite corners of the board. In how many ways can you cover the 62 squares of
+	the mutilated chessboard with 31 dominoes? \\
+	
+	\textsf{Pausa per provare a risolverlo e convincersi che è difficile.} \\
+	
+	\emph{Soluzione.} The problem looks even more complicated than the problem solved by Fisher,
+	but this is not so. The problem is trivial. There is no way to cover the mutilated
+	chessboard. Indeed, each domino covers one black and one white square. If a
+	covering of the board existed, it would cover 31 black and 31 white squares. But
+	the mutilated chessboard has 30 squares of one color and 32 squares of the other
+	color. \\
+	
+	\textsf{Quando intervengono tabelle o scacchiere, possiamo colorarle per costruirci utili invarianti!}\\
+	
+	\textbf{Problema 3.} Suppose the positive integer $ n $ is odd. First Al writes the numbers $ 1, 2,\dots, 2n $
+	on the blackboard. Then he picks any two numbers $ a, b $, erases them, and writes,
+	instead, $ |a - b| $. Prove that an odd number will remain at the end. \\
+	
+	\textsf{Pausa in cui cerchiamo l'invariante.} \\
+	
+	\textit{Soluzione.} Suppose $ S $ is the sum of all the numbers still on the blackboard. Initially
+	this sum is $ S = 1+2+ \dots +2n = n(2n+1) $, an odd number. Each step reduces $ S $
+	by $ 2 \min(a, b) $, which is an even number. So the parity of $ S $ is an invariant. During
+	the whole reduction process we have $ S \equiv 1 \mod 2 $. Initially the parity is odd. So,
+	it will also be odd at the end. \\
+	
+	\textbf{Problema 4.} In the Parliament of Sikinia, each member has at most three enemies. Prove
+	that the house can be separated into two houses, so that each member has at most
+	one enemy in his own house. \\
+	
+	\textsf{Pausa in cui non si capisce bene come l'invariante potrebbe aiutare.} \\
+	
+	\textit{Soluzione.} Initially, we separate the members in any way into the two houses. Let
+	H be the total sum of all the enemies each member has in his own house. Now
+	suppose $ A $ has at least two enemies in his own house. Then he has at most one
+	enemy in the other house. If $ A $ switches houses, the number $ H $ will decrease. This
+	decrease cannot go on forever. At some time, $ H $ reaches its absolute minimum.
+	Then we have reached the required distribution.\\
+	
+	\textsf{Here we have a new idea. We construct a positive integral function which decreases
+	at each step of the algorithm. So we know that our algorithm will terminate.
+	There is no strictly decreasing infinite sequence of positive integers. H is not
+	strictly an invariant, but decreases monotonically until it becomes constant. Here,
+	\textbf{the monotonicity relation is the invariant}.} \\
+	
+\end{multicols}
+
+\textbf{Esercizi.}
+\begin{enumerate}[label=(\subscript{a}{\arabic*})]
+	\item Start with the positive integers $ 1,\dots, 4n - 1 $. In one move you may replace any two integers by their difference. Prove that an even integer will be left after $ 4n - 2 $ steps.
+	
+	\item  Assume an 8$ \times $8 chessboard with the usual coloring. You may repaint all squares
+	\begin{enumerate}
+		\item of a row or column
+		\item  of a 2 $ \times $ 2 square
+	\end{enumerate}
+	The goal is to attain just one black square.
+	Can you reach the goal?
+	
+	\item There is a chip on each dot on the vertices of a regular $ n $-agon. In one move, you may simultaneously move any two chips by one place in opposite directions. The goal is to get all chips into one dot. When can this goal be reached?
+	
+	\item  Let $ d(n) $ be the digital sum of $ n \in \mathbb{N} $. Solve $ n + d(n) + d(d(n)) = 1997 $.
+	
+	\item   A dragon has 100 heads. A knight can cut off 15, 17, 20, or 5 heads, respectively,
+	with one blow of his sword. In each of these cases, 24, 2, 14, or 17 new heads grow
+	on its shoulders. If all heads are blown off, the dragon dies. Can the dragon ever die?
+	
+	\item  Three pucks $ A, B, C $ are in a plane. An ice hockey player hits the pucks so that
+	any one glides through the other two in a straight line. Can all pucks return to their
+	original spots after 1001 hits?
+	
+\end{enumerate}
+\begin{enumerate}[label=(\subscript{b}{\arabic*})]
+	\item A rectangular floor is covered by $ 2\times 2 $ and 1$ \times $4 tiles. One tile got smashed. There is a tile of the other kind available. Show that the floor cannot be covered by rearranging
+	the tiles.
+	
+	\item Consider an $ n \times n $ chessboard with the four corners removed. For which values of $ n $
+	can you cover the board with L-tetrominoes? (Sono fatti come le caselle che copre il salto di un cavallo)
+	
+	\item Every point of the plane is colored red or blue. Show that there exists a rectangle
+	with vertices of the same color.
+	
+	
+\end{enumerate}
+\begin{enumerate}[label=(\subscript{c}{\arabic*})]
+	\item "Questo è il girone dei lussuriosi", aveva appena detto l’almo Cartesio, quando due anime si staccarono dal gruppo,
+	e giunsero da noi. Le riconobbi: erano Alberto e Barbara. Protagonisti insieme di sì tanti giuochi, aveano col tempo
+	ceduto alla passione. In vita, amavano dilettarsi con una lavagna su cui erano scritti i numeri da 1 a 100: a turno uno di
+	loro rimpiazzava due numeri a e b con il loro minimo comune multiplo mcm$ (a, b) $ e il loro massimo comun divisore
+	MCD$ (a, b) $. Continuarono così fino a quando non vi erano più mosse disponibili: per ogni possibile coppia i nuovi
+	numeri sarebbero difatti stati uguali ai precedenti. Ordinando in ordine decrescente i numeri presenti sulla lavagna alla
+	fine del giuoco, qual era il decimo? [Gas2017]
+	
+	\item Ash è un giovane allenatore di polinomi monici, in breve Polimon. Possiede 65 Polimon, numerati da 1 a 65. Per
+	allenarli, li dispone tutti in fila in ordine decrescente (quello più a sinistra è il numero 65, quello più a destra è il
+	numero 1). Una volta al minuto, Ash suona una campanella e grida il numero $ k $ di un Polimon tra 2 e 65, e questo
+	deve abbandonare il suo posto e rientrare nella fila posizionandosi subito a destra di quello col numero $ k -1 $. Se il
+	Polimon $ k $ si trova già subito a destra di quello numerato $ k -1 $, Ash non può chiamare il suo numero. L’allenamento
+	termina quando non è possibile più chiamare alcun numero. Quante volte al massimo può suonare la sua campanella
+	Ash durante un allenamento?[Gas2015]
+	
+	\item Radice insegna alla sua gattina Emmy un nuovo gioco. Su una scacchiera infinita (ebbene sì, nella loro casa ci sono anche delle scacchiere
+	infinite!), ha posto due pedine, allineate verticalmente sulla stessa colonna, con esattamente due caselle vuote tra le due. Le due giocatrici
+	muovono a turno la propria pedina, con Radice che comincia muovendo quella più in basso. Lo scopo di Radice è di catturare la pedina
+	di Emmy, raggiungendo la stessa sua casella alla fine di una mossa; per farlo, ad ogni suo turno può scegliere se fare esattamente 4 passi
+	oppure 5, però con queste regole: spostarsi di una casella in alto o a destra costa 1 passo, spostarsi in basso o a sinistra costa 2 passi. Per
+	esempio, al suo primo turno può spostarsi in alto di 4 caselle, sorpassando così la pedina di Emmy, oppure di una casella a destra, una a
+	sinistra ed una in basso (totale 5 passi), ma non può spostarsi solo di una casella in alto e poi una in basso, perché in tal caso farebbe solo 3
+	passi. Emmy invece sposta la sua pedina di una sola casella per turno, in una delle 4 direzioni, stando attenta però a non finire sulla stessa
+	casella della pedina di Radice. Emmy, che è una gattina sveglia, ha imparato in fretta qual è la strategia migliore per far durare il gioco più a
+	lungo possibile, nonostante gli sforzi di Radice. Dopo quante mosse finirà la partita? [Gas2014]
+\end{enumerate}
+\begin{enumerate}[label=(\subscript{d}{\arabic*})]
+	\item Un triangolo equilatero è diviso in 9 triangolini, e su ogni triangolino è inizialmente
+	scritto il numero 0. Marco, per passare il tempo, fa il seguente gioco: ad ogni mossa sceglie 2
+	triangolini con un lato in comune e somma o sottrae 1 ad entrambi i numeri scritti su questi
+	triangolini (si intende che l’operazione effettuata sui due triangolini è la stessa). Dopo qualche
+	tempo si accorge che i numeri scritti sui 9 triangolini sono, in un qualche ordine, $ n, n+1, \dots , n+8 $,
+	dove $ n $ `e un intero non negativo. Dimostrare che $ n $ può essere soltanto 0 o 2. [Febbraio 2017]
+	
+	\item In una variante del gioco della battaglia navale Anna posiziona una portaerei (che possiamo
+	pensare come rettangolino $ 5 \times 1 $) in una griglia $ 10 \times 10 $, indifferentemente in verticale o in
+	orizzontale, senza farla vedere a Jacopo. Jacopo prova a colpire la portaerei, dicendole volta per
+	volta le coordinate di un quadretto all’interno della griglia. Se il quadretto che ha scelto è tra
+	quelli coperti dalla portaerei, questa è colpita, altrimenti è mancata. Quanti colpi deve sparare
+	come minimo Jacopo per colpirla sicuramente almeno una volta? [Feb 13]
+	
+	\item Sia $ a_1, a_2, \dots , a_n $ una sequenza di interi positivi tali che $ a_{i+1} $ è il numero di divisori positivi
+	di $ a_i $ per ogni $ i \geq $ 1. Supponiamo che $ a_2 \neq 2 $. Dimostrare che esiste un indice $ m $ tale che $ a_m $ sia
+	un quadrato perfetto. [Febbraio 2016]
+	
+	\item Camilla ha una scatola che contiene 2015 graffette. Ne prende un numero positivo $ n $ e le mette
+	sul banco di Federica, sfidandola al seguente gioco. Federica ha a disposizione due tipi di mosse:
+	può togliere $ 3 $ graffette dal mucchio che ha sul proprio banco (se il mucchio contiene almeno
+	3 graffette), oppure togliere metà delle graffette presenti (se il mucchio ne contiene un numero
+	pari). Federica vince se, con una sequenza di mosse dei tipi sopra descritti, riesce a togliere tutte
+	le graffette dal proprio banco.
+	(a) Per quanti dei 2015 possibili valori di $ n $ Federica può vincere?
+	(b) Le ragazze cambiano le regole del gioco e decidono di assegnare la vittoria a Federica nel
+	caso riesca a lasciare sul banco una singola graffetta. Per quanti dei 2015 valori di $ n $
+	Federica può vincere con le nuove regole? [Febbraio 2015]
+	
+	\item Sia $ n $ un intero positivo. Una pulce si trova sulla retta reale ed effettua una sequenza di $ n $ salti
+	di lunghezza $ 1,\, 2,\, 3,\,\dots ,\,n $. La pulce può scegliere l’ordine delle lunghezze dei salti e per ogni salto
+	può decidere se saltare verso destra o sinistra.
+	(a) Dimostrare che per $ n = 2012 $ la pulce può terminare la sequenza di salti nello stesso punto
+	da cui era partita.
+	(b) Dimostrare che per $ n = 2013 $ ciò non è possibile.
+	(c) In generale per quali $ n $ può ritornare al punto di partenza? [Feb 13]
+	
+	\item  Due giocatori dicono a turno numeri naturali maggiori di 1, con la regola che non si
+	può dire un numero che si possa scrivere come somma di multipli positivi di numeri
+	già detti. Chi fa sì che l’avversario non abbia più nessun numero da dire vince. Quale
+	giocatore ha una strategia vincente?
+\end{enumerate}
+
+\end{document}

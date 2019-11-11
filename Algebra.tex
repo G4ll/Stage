@@ -1,0 +1,347 @@
+\documentclass[a4paper]{article}
+
+\makeatletter
+\title{Algebra}\let\Title\@title
+\author{Andrea Gallese}\let\Author\@author
+\date{\today}\let\Date\@date
+
+\usepackage[italian]{babel}
+\usepackage[utf8]{inputenc}
+
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{faktor}
+\usepackage{wasysym}
+\usepackage{thmtools}
+
+\usepackage[margin=1.5cm]{geometry}
+\usepackage{fancyhdr}
+\usepackage[position=top]{subfig}
+\usepackage{multirow}
+
+\usepackage{lipsum}
+\usepackage{titlesec}
+\usepackage{multicol}
+\usepackage{setspace}
+\usepackage{mdframed}
+\usepackage{enumitem}
+
+% Comando Intitolante
+\newcommand{\Intitola}{\begin{center}
+		\vspace*{0,5 cm}
+		{\Huge \textsc{\Title}} \\
+		\vspace{0,5 cm}
+		\textsc{\Author} \hspace{1cm} \textsc{\Date}
+		\thispagestyle{empty}
+		\vspace{0,7 cm}
+\end{center}}
+
+% magia
+\iffalse
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks,
+	citecolor=black,
+	filecolor=black,
+	linkcolor=black,
+	urlcolor=black
+}
+\fi
+
+% Formato Teoremi, Dimostrazioni, Definizioni
+\newtheorem{theorem}{Teorema}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{remark}
+\newtheorem*{remark}{Osservazione}
+\theoremstyle{definition}
+\newtheorem*{definition}{Definizione}
+\renewcommand\qedsymbol{$\clubsuit$}
+
+% Frontespizio e piè di pagina
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\textsf{\Author}}
+\chead{\textbf{\textsf{\Title}}}
+\lhead{\textsf{\today}}
+
+% Frontespizio e piè di pagina
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\textsf{\Author}}
+\chead{\textbf{\textsf{\Title}}}
+\lhead{\textsf{\today}}
+\cfoot{\thepage}
+
+% Crea una nuova pagina per ogni sottosezione
+\newcommand{\subsectionbreak}{\clearpage}
+
+% Per avere le sezioni con le lettere
+\renewcommand{\thesection}{\Alph{section}}
+
+%Comandi specifici
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\F}{\mathbb{F}}
+
+\renewcommand{\S}{\mathcal{S}}
+
+\newcommand{\Aut}[1]{\mathrm{Aut}\left( #1 \right)}
+\newcommand{\Int}[1]{\mathrm{Int}\left( #1 \right)}
+\newcommand{\Orb}[1]{\mathcal{O}rb\left( #1 \right)}
+\newcommand{\Stab}[1]{\mathcal{S}tab\left( #1 \right)}
+\newcommand{\gen}[1]{\langle #1 \rangle}
+\newcommand{\Gal}[1]{\mathcal{G}al\left( #1 \right)}
+
+\newcommand{\LR}{\quad\Leftrightarrow\quad}
+\newcommand{\RR}{\quad\Rightarrow\quad}
+
+\newcommand{\fun}[5]{
+	\begin{align*}
+	#1 \colon #2 &\to #3 \\
+	#4 &\mapsto #5
+	\end{align*}
+}
+
+% indentazione
+\setlength{\parindent}{0pt}
+
+% multicols
+\usepackage{multicol}
+\setlength\columnsep{20pt}
+\setlength{\columnseprule}{0,5pt}
+
+% Per disegnare diagrammi commuatativi
+\usepackage{tikz-cd}
+\usepackage{tikz}
+
+
+% Bullet delle liste puntate
+\renewcommand\labelitemi{$ \blacktriangleright $}
+
+\begin{document}
+\Intitola
+\small
+\begin{multicols}{2}
+	\begin{center}
+		\textsc{Cos'è un polinomio}
+	\end{center}
+
+	Presentiamo il nostro amico polinomio
+	\[ P(x) = a_nx^n + a_{n-1}x^{n-1} + \dots + a_1 x + a_0 \]
+	buttiamoci un sacco di esempi
+	\begin{equation*}
+	\begin{array}{c}
+	x^2 - 5x +6\\
+	3x^3 - 6x^2 -3x + 6\\
+	4x^4 +1\\
+	x^6 +2x^5 + 2x^4 +2x^3 + 2x^3 + 2x^2 + 2x +1
+	\end{array}
+	\end{equation*}
+	
+	e fattorizziamoli
+	
+	\begin{equation*}
+	\begin{array}{c}
+	(x-2)(x-3) \\
+	3(x-1)^2(x+1) \\
+	(2x^2 + 2x +1)(2x^2 -2x +1) \\
+	(x+1)^2(x^2+x+1)(x^2-x+1)
+	\end{array}
+	\end{equation*}
+	
+	A ogni polinomio è associata in modo naturale una funzione polinomiale: la valutazione. \\
+	
+	\textbf{Ruffini.} Se $ P(\alpha) = 0 $, allora $ P(x) = (x-\alpha)Q(x) $. \\
+	
+	\textbf{Problema 1.} Quante sono le coppie di numeri reali $ (x,y) $ che soddisfano entrambe le equazioni $ x + y^2 = y^3 $ e $ y + x^2 = x^3 $? \\
+	
+	\textbf{Teorema Fondamentale dell'Algebra.} Se permettiamo $ \lambda_i \in \mathbb{C} $, allora ci è concesso scrivere
+	\[ P(x) = a_n(x-\lambda_1)(x-\lambda_2) \cdots (x-\lambda_n) \]
+	
+	\textbf{Problema 2.} Si sa che $ p(x) $ è un polinomio monico di grado 5. Inoltre, si sa che le soluzioni dell’equazione $ p(x) = 0 $ sono esattamente $ x = 0, 1, 2, 4 $. Determinare il massimo valore che può assumere il coefficiente del termine di primo grado. [Feb 12]\\
+	
+	\textbf{Problema 5.} Sapendo che il polinomio $ p $ è tale che, per ogni intero $ n $, $ p(5^n - 1) = 5^{5n} - 1 $, quanto varrà $ p(3) $? [Feb 13?] \\
+	
+	\textbf{Principio di identità.} Se due polinomi $ P(x) $ e $ Q(x) $ assumono lo stesso valore in più punti del massimo dei loro gradi, allora coincidono. \\
+	
+	\textbf{Problema 6.} Abbiamo un polinomio monico $ P $ di grado $ 99 $, trovare $ P(101) $ sapendo che
+	\[ P(k) = \frac{1}{k} \quad \text{per } k = 1, 2, \dots, 100 \]
+	
+	\textbf{Formule di Viète.} \\
+	
+	\textbf{Problema 3.} Abbiamo
+	\[ P(x) = x^{2017} + 2x^{2016} +3x^{2015} + \dots + 2016x + 2017 \]
+	Trovare la somma dei quadrati delle radici, la somma degli inversi delle radici e anche la somma degli inversi delle radici aumentate di 1. \\
+	
+	\textbf{Problema 4.} Il polinomio $ P(x) $, di grado 42, assume il valore 0 nei primi 21 numeri primi dispari e nei loro reciproci. Quanto vale il rapporto $ P(2)/P(1/2) $?\\
+	
+	
+	
+	\textbf{Problema 7.} Siano $ a, b, c $ interi nonnulli tali che sia $ \frac{a}{b} +\frac{b}{c}+ \frac{c}{a} $ che $ \frac{a}{c} +\frac{c}{b}+ \frac{b}{a} $ sono interi. Dimostra che $ |a| = |b| = |c| $. \\
+	
+	\textbf{Problema 8.} Per il suo gioco preferito Andrea ha bisogno di usuali dadi a sei facce. Purtroppo Andrea ha perso i dadi originali, ma possiede un dado a 4 facce e un dado a 9 facce (la forma del dado non è rilevante, si sa che ogni faccia ha la stessa probabilità di uscire). In quali modi Andrea può disegnare i puntini sulle facce dei due dadi (mettendo almeno un puntino per faccia) in modo che lanciandoli e sommando i puntini si ottengano gli stessi esiti, con le stesse frequenze, che si otterrebbero con due ordinari dadi da 6?
+	
+\end{multicols}
+
+\begin{center}
+	\textsc{L'anello dei polinomi a coefficienti interi}
+\end{center}
+
+\begin{multicols}{2}
+	\textbf{Problema 1.} (Gas 2012) Le carte della $ \mathbb{Q} $ di cuori sono molto preoccupate: non passa giorno che non si oda il grido ”Tagliategli la testa!”. Tengono anche un resoconto
+	di quante esecuzioni capitali ci sono ogni giorno. Ultimamente hanno registrato questi dati:
+	$ d(2002) = 11, \, 
+	d(2006) = 7, \, 
+	d(2008) = 5,\, 
+	d(2009) = 4,\,
+	d(2011) = 2 ,\, 
+	 $ dove $ d(t) = h $ è la funzione decapitazione e indica che sono state tagliate h teste nel giorno t del resoconto (un numero negativo indica persone
+	graziate). Ultimamente le carte si sono rese conto che per uno schiribizzo della $ \mathbb{Q} $ di cuori, d è un polinomio a coefficienti interi. Oggi è il
+	giorno 2013 del resoconto e Q è molto nervosa per la partita di croquet, per cui il numero sarà inevitabilmente un intero positivo. Quante teste
+	rotoleranno oggi come minimo? \\
+	
+	
+	\textbf{Problema 1.} (Gas 2017) Uno dei matematici rivelò agli altri che stava studiando i polinomi, nella speranza di trovare una formula per il terzo grado.
+	“Durante il mio lavoro, mi sono imbattuto in certi polinomi molto particolari: se chiamiamo $ n $ la somma dei coefficienti di
+	$ p(x) $, allora $ p(2017) = n! $. Qual è il più grande $ n  $ minore di 10000 tale per cui esista un polinomio p a coefficienti interi che
+	soddisfi queste condizioni?”. \\
+	
+	\textbf{Problema 1.} Siano $ a,\, b,\, c $ tre interi distinti, e sia $ P $ un polinomio a \emph{coefficienti interi}. Mostrare che le condizioni $$  P(a) = b,\quad P(b) = c,\quad P(c) = a,  $$ non possono essere soddisfatte simultaneamente. \\
+	
+	\textbf{Problema 1.} Let $ f (x) $ be a monic polynomial with integral coefficients. If there are four different
+	integers $ a, b, c, d $, so that $ f (a) = f (b) = f (c) = f (d) = 5 $, then there is no
+	integer $ k $, so that $ f (k) = 8 $. \\
+	
+	Soluzioni razionali di polinomi a coefficienti interi? \\
+	
+	\textbf{Problema 3.} Quante sono le coppie di numeri reali $ (x,y) $ che soddisfano entrambe le equazioni $ x + y^2 = y^3 $ e $ y + x^2 = x^3 $?
+	
+	\begin{center}
+		\textsc{Filtri dell'unità}
+	\end{center}
+	
+	\textbf{Problema 4.} Calcolare la somma dei coefficienti del polinomio
+	\[ (x^{21} + 4x^2 - 3)^{2001} - (x^{21} + 4x^2 - 3)^{667} +x^{21} +4x^2. \]
+	
+
+	
+	\textbf{Problema 6.} Il Bossel finale del primo livello sarà un polinomio $ f (x) $ scelto dal malvagio Brouwer tra quelli a coefficienti interi
+	della forma $ a_5x^5 + a_4 x^4 + a_3 x^3 + a_2 x^2 + a_1 x + a_0 $ tali che $ a_0 - 3a_2 + 9a_4 = 0 $ e $ a_1 - 3a_3 + 9a_5 = 0 $, e per sconfiggerlo
+	Mathio dovrà fattorizzare il numero $ f (33) $. Taod, il fungo antrolomorfo, vuole aiutare Mathio: per ogni primo $ p $ che
+	sicuramente dividerà $ f (33) $ lascia in un punto del livello un foglio con scritto il numero p. Mathio raccoglie i fogli e
+	per esercizio calcola la somma dei numeri scritti. Sapreste farlo anche voi? \\
+	
+	\textbf{Problema 9.} A sequence $ a_1, a_2, \dots, a_n $ is called $ k $-balanced if $ a_1 + a_{k+1} + \dots = a_2 + \dots + a_{k+2} + \dots = \dots = 
+	a_k +a_{2k} + \dots $. Suppose the sequence $ a_1, a_2, \dots , a_{50} $ is $ k $-balanced for $ k = 3,\, 5,\, 7,\, 11,\, 13,\, 17 $. Prove
+	that all the values $ a_i $ are zero. \\
+	
+	\begin{center}
+		\textsc{Polinomi per altri scopi}
+	\end{center}
+	
+	Presentare il dado! \\
+	
+	\textbf{Problema 7.} Siano $ a, b, c $ interi nonnulli tali che sia $ \frac{a}{b} +\frac{b}{c}+ \frac{c}{a} $ che $ \frac{a}{c} +\frac{c}{b}+ \frac{b}{a} $ sono interi. Dimostra che $ |a| = |b| = |c| $. \\
+	
+	\textbf{Problema 8.} Per il suo gioco preferito Andrea ha bisogno di usuali dadi a sei facce. Purtroppo Andrea ha perso i dadi originali, ma possiede un dado a 4 facce e un dado a 9 facce (la forma del dado non è rilevante, si sa che ogni faccia ha la stessa probabilità di uscire). In quali modi Andrea può disegnare i puntini sulle facce dei due dadi (mettendo almeno un puntino per faccia) in modo che lanciandoli e sommando i puntini si ottengano gli stessi esiti, con le stesse frequenze, che si otterrebbero con due ordinari dadi da 6? \\
+	
+	\textbf{Problema 5.} An unfair coin has a 2/3 probability of turning up heads. If this coin is tossed 50 times, what is the probability that the total number of heads is even? \\
+	
+	
+	
+	
+	
+	
+\end{multicols}
+
+\textbf{Problemi.}
+
+\begin{enumerate}
+	\item Due polinomi monici (cioè con coefficiente di grado massimo uguale a 1) a coefficienti interi $ p(x) $ e $ q(x) $ sono tali che il loro massimo comun divisore sia $ (x - 1)(x - 2) $, il loro minimo comune multiplo sia $ (x-1)^2 (x-2)^3(x-3)(x+ 1)$ e il grado di $ p(x) $ sia minore o uguale al grado di $ q(x) $. In quanti modi può essere scelto $ p(x) $?\\
+	(A) 4 (B) 5 (C) 8 (D) 10 (E) 12 [febboh]
+	
+	\item Il polinomio $ P(x) $, di grado 42, assume il valore 0 nei primi 21 numeri primi dispari e nei loro reciproci. Quanto vale il rapporto $ P(2)/P(1/2) $?\\
+	(A) 0 (B) 1 (C) $ 2^{21} $ (D) $ 3^{21} $ (E) $ 4^{21} $ [feb17]
+	
+	\item Quante sono le coppie di numeri reali $ (x,y) $ che soddisfano entrambe le equazioni $ x + y^2 = y^3 $ e $ y + x^2 = x^3 $?\\
+	(A) 1 (B) 3 (C) 5 (D) 9 (E) Infinite [Feb17]
+	
+	\item Sapendo che il polinomio $ p $ è tale che, per ogni intero $ n $, $ p(5^n - 1) = 5^{5n} - 1 $, quanto varrà $ p(3) $? [Feb 13?]
+	
+	\item Due numeri $ a $ e $ b $ sono tali che $ \dfrac{3a+b}{a-b} = 2 $, quanto vale $ \dfrac{a^3}{b^3} $? [Feb 12]
+	
+	\item Si sa che $ p(x) $ è un polinomio monico di grado 5. Inoltre, si sa che le soluzioni dell’equazione $ p(x) = 0 $ sono esattamente $ x = 0, 1, 2, 4 $. Determinare il massimo valore che può assumere il coefficiente del termine di primo grado. [Feb 12]
+	
+	\item Siano $ p(x) $ e $ q(x) $ due polinomi distinti di grado minore o uguale a 3, a coefficienti interi e tali che$$  
+	p(1) = q(1), p(2) = q(2), p(3) = q(3),
+	p(-1) = -q(-1), p(-2) = -q(-2), p(-3) = -q(-3).
+	 $$	Qual è il minimo valore che può assumere $ [p(0)]^2 + [q(0)]^2 $ ? [Feb12]
+	 
+	 \item  (IMO 2006) Let P(x) be a polynomial of degree n > 1 with integer coefficients and let k be a
+	 positive integer. Consider the polynomial
+	 Q(x) = P(P(. . .(P(x). . .))
+	 | {z }
+	 k P 0s
+	 Prove that there are at most n integers t such that Q(t) = t.
+\end{enumerate}
+
+\newpage
+\newgeometry{left=3cm,bottom=0.1cm}
+\begin{center}
+	\vspace*{0,5 cm}
+	{\Huge \textsc{Problemi di Algebra}} \\
+	\vspace{0,5 cm}
+	\textsc{\Author} \hspace{1cm} \textsc{23 Febbraio 2017 - Pavia}
+	\thispagestyle{empty}
+	\vspace{0,7 cm}
+\end{center}
+\normalsize
+
+
+1. Il polinomio $ x^3 -26x^2 + 203x - 521 $ ha radici $a, b, c$ calcola 
+\[ a^2 + b^2 + c^2 \qquad\text{e}\qquad (a+b)(b+c)(c+a) \qquad\text{e}\qquad \frac{1}{a+1}+\frac{1}{b+1}+\frac{1}{c+1}\]
+
+2. Presi tre reali positivi $a$, $b$, $c$ tali che $a+b+c = 36$, quanto può valere al massimo $abc$? Quanto può valere al massimo $a^3b^2c$? \\
+
+3. Trova tutti i polinomi $ P(x) $ tali che
+\[ P(P(x)) - x^2 = x\cdot P(x) \]
+
+4. Mostrare che per ogni numero naturale $ n \geq 1 $ vale
+\[ 1 \cdot 3 \cdot 5 \cdots (2n-1) \leq n^n \]
+
+5. Abbiamo un polinomio $ P $ di grado $ 99 $, trovare $ P(101) $ sapendo che
+\[ P(k) = \frac{1}{k} \quad \text{per } k = 1, 2, \dots, 100 \]
+
+6. Trova, tra tutti i triangoli di perimetro $2$, quello di area massima. \\
+
+\newpage
+\begin{center}
+	\vspace*{0,5 cm}
+	{\Huge \textsc{Algebra}} \\
+	\vspace{0,5 cm}
+	\textsc{\Author} \hspace{1cm} \textsc{15 Febbraio 2018 - La Spezia}
+	\thispagestyle{empty}
+	\vspace{0,7 cm}
+\end{center}
+\normalsize
+
+\begin{enumerate}
+	\item  Il polinomio $ x^3 -26x^2 + 203x - 521 $ ha radici $a,\, b,\, c$ calcola 
+	\[ a^2 + b^2 + c^2 \qquad\text{e}\qquad (a+b)(b+c)(c+a) \qquad\text{e}\qquad \frac{1}{a+1}+\frac{1}{b+1}+\frac{1}{c+1}\]
+	
+	\item Siano $ a,\, b,\, c $ tre interi distinti, e sia $ P $ un polinomio a \emph{coefficienti interi}. Mostrare che le condizioni $$  P(a) = b,\quad P(b) = c,\quad P(c) = a,  $$ non possono essere soddisfatte simultaneamente.
+
+	\item Alberto e Barbara giocano al seguente gioco. Alberto pensa a un polinomio a coefficienti interi non-negativi $ P(x) $. Barbara può fargli $ n $ domande, sotto forma di un intero $ m $. Alberto risponde con $ P(m) $. Qual è il più piccolo $ n $ per cui Barabara ha una strategia vincente?
+	
+	\item  Trovare il massimo valore possibile di
+	\[ P(x) = \frac{(x-14^\pi)(x-12!^e)}{(17-14^\pi)(17-12!^e)} 
+	+\frac{(x-12!^e)(x-17)}{(14^\pi-12!^e)(14^\pi-17)} +\frac{(x-17)(x-14^\pi)}{(12!^e-17)(12!^e-14^\pi)} \]
+	al variare di $ x $ tra i numeri reali.
+	
+\end{enumerate}
+
+\end{document}

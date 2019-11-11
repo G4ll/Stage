@@ -1,0 +1,380 @@
+\documentclass[a4paper]{article}
+
+\makeatletter
+\title{Teoria dei Numeri - Sassari}\let\Title\@title
+\author{Andrea Gallese}\let\Author\@author
+\date{\today}\let\Date\@date
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{faktor}
+\usepackage{wasysym}
+
+\usepackage[margin=1.5cm]{geometry}
+\usepackage{fancyhdr}
+\usepackage{subfig}
+\usepackage{multirow}
+
+\usepackage{lipsum}
+\usepackage{titlesec}
+\usepackage{multicol}
+\usepackage{setspace}
+\usepackage{mdframed}
+
+% Comando Intitolante
+\newcommand{\Intitola}{\begin{center}
+		\vspace*{0,5 cm}
+		{\Huge \textsc{\Title}} \\
+		\vspace{0,5 cm}
+		\textsc{\Author} \hspace{1cm} \textsc{\Date}
+		\thispagestyle{empty}
+		\vspace{0,7 cm}
+\end{center}}
+
+% Formato Teoremi, Dimostrazioni, Definizioni
+\newtheorem{theorem}{Teorema}[section]
+\theoremstyle{remark}
+\newtheorem*{remark}{Osservazione}
+\theoremstyle{definition}
+\newtheorem*{definition}{Definizione}
+\renewcommand\qedsymbol{$\clubsuit$}
+
+% Frontespizio e piè di pagina
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\textsf{\Author}}
+\chead{\textbf{\textsf{\Title}}}
+\lhead{\textsf{\today}}
+
+% Per avere le sezioni con le lettere
+\renewcommand{\thesection}{\Alph{section}}
+
+%Comandi specifici
+\newcommand{\Aut}[1]{\mathrm{Aut}\left( #1 \right)}
+\newcommand{\Int}[1]{\mathrm{Int}\left( #1 \right)}
+\newcommand{\Orb}[1]{\mathcal{O}rb\left( #1 \right)}
+\newcommand{\Stab}[1]{\mathcal{S}tab\left( #1 \right)}
+
+\newcommand{\fun}[5]{\begin{align*}
+	#1 \colon #2 &\to #3 \\
+	#4 &\mapsto #5
+	\end{align*}}
+
+% indentazione
+\setlength{\parindent}{0pt}
+
+% multicols
+\usepackage{multicol}
+\setlength\columnsep{20pt}
+\setlength{\columnseprule}{0,5pt}
+
+% Per disegnare diagrammi commuatativi
+\usepackage{tikz-cd}
+
+% Serve a decidere il bullet delle liste puntate
+\renewcommand\labelitemi{-}
+
+\begin{document}
+\Intitola
+\small
+
+\begin{multicols}{2}
+
+
+\begin{center}
+	\textsc{Divisione con Resto}
+\end{center}
+
+\textsf{Cos'è, proprietà.}\\
+
+\textbf{Problema 1.} Dimostrare che $2^{32 }+1 $ è divisibile per $ 641 $.\\
+
+\textsf{La soluzione è assolutamente magica: $ 641 = 2^4 + 5^4 = 2^7 \cdot 5 -1 $, pertanto $ 641 \mid 2^{28}\cdot 5^4 - 1 $ e $ 641 \mid  2^{28}\cdot 5^4 + 2^{32} $.}\\
+
+\textbf{Problema 2.} [Feb 13] Determinare tutte le terne di interi strettamente positivi $ (a, b, c) $ tali che
+\begin{itemize}
+	\item  $ a \leq b \leq c $;
+	\item  $ MCD (a, b, c) = 1 $;
+	\item  $ a $ è divisore di $ b + c $, $ b $ è divisore di $ c + a $ e $ c $ è divisore di $ a + b $.
+\end{itemize}
+  
+  
+\begin{center}
+	\textsc{Numeri primi}
+\end{center}
+\textsf{Definizione}\\
+
+\textbf{Problema 3.} $ 4^{545} + 545^4 $ è primo?
+
+\begin{center}
+	\textsc{Teorema Fondamentale dell'Aritmetica}
+\end{center}
+\textsf{Enunciato (che non si capisce)}
+$$  \boxed{2018 = 2 \cdot 1009}  $$
+\textbf{Problema 4.} Trovare tutte le terne di interi $ (a, b, c) $ tali che $$  a^2 + b^2 = 3c^2  $$ 
+\columnbreak
+
+\begin{center}
+	\textsc{Congruenze}
+\end{center}
+\begin{enumerate}
+	\item  Che ora sarà tra esattamente $ 1000 $ ore?
+	
+	\textsf{Definizione, spiegazione, notazione...}
+	
+	\item What are the remainders when $ 3333 + 4444 $ and $ 3333 \cdot 4444 $ are divided by 5?
+	
+	\textsf{Osservazioni su come si comporta la congruenza contro le operazioni}
+	
+	\item What is the remainder when $ 2015^{2015} $ is divided by 2014?
+	
+	\textsf{Qualche parola sulla divisione}
+	
+	\item Is $ 21^{100} - 12^{100} $ a multiple of 11?
+	\item What is the remainder when $ 7^{2015} $ is divided by 48?
+	\item What are the last two digits of the integer $ 17^{198} $?
+	\item Criteri di congruenza. Per $ 2^n $, $ 3 $, $ 9 $, $ 11 $.
+\end{enumerate}
+
+\end{multicols}
+
+\textbf{Problemi da proporre.}
+\begin{multicols}{2}
+	\begin{enumerate}
+		\item Dimostrare che, se $ p $ e $ p^2 +2 $ sono primi, anche $ p^3 +2 $ lo è.
+		
+		\item $  1 \cdot 3 \cdot 5 \cdots 2013 + 2 \cdot 4 \cdot 6 \cdots 2014  $ è divisibile per 2015?
+		
+		\item Trovare il resto quando:
+		\begin{itemize}
+			\item [(a)] 555 è diviso per 13 \\
+			\item [(b)] $ 555^2$ è diviso per 13\\
+			\item [(c)] $ 156 \cdot 167 $ è diviso per 7 \\
+			\item [(d)] $ 24^{50} - 15^{50} $ è diviso per 13\\
+			\item [(e)] $ 1 + 2 + \dots + 2007 $ è diviso per 1000\\
+			\item [(f)] $ 5^{15} $ è diviso per 128\\
+			\item [(g)]$  7^{7^7} $ è diviso per 10\\
+			\item [(h)] $ 12^9 $ è diviso per 1000\\
+		\end{itemize}
+		
+		
+		\item Quante sono le coppie di interi ordinate $ (x, y) $ tali che $ xy = 4(y^2 + x) $? [Feb 13] \\
+		
+		\item Dato un qualsiasi intero positivo $ n $, chiamiamo ciclostilato di $ n $ il numero che si ottiene concatenando 2012 scritture di $ n $ (in base 10). Per esempio il ciclostilato di 314 è $ 314314314\dots314 $, dove le cifre “314” si ripetono 2012 volte.
+		\begin{itemize}
+			\item [(a)] Determinare tutti gli interi positivi $ m $ tali che il ciclostilato di $ m $ sia multiplo di 9.
+			\item [(b)] Determinare tutti gli interi positivi $ m $ tali che il ciclostilato di $ m $ sia multiplo di 11.
+		\end{itemize}
+	
+		
+		\item $ \dfrac{1}{x} + \dfrac{1}{y} = \dfrac{1}{6} $
+		
+		\item Trovare tutte le coppie di interi tali che $ a^2 + b^2 = 8070 $.
+		
+		\item Quante sono le coppie di interi positivi $(a,b)$ con $a<b$ tali che $MCD(a,b)=2$ e $mcm(a,b)=660$?
+		
+		\item $ (n, n+1) = 1 $
+		
+		\item $ (a, b)[a, b] = ab $
+		
+	\end{enumerate}
+\end{multicols}
+
+\newpage
+\begin{multicols}{2}
+	
+	
+	\begin{center}
+		\textsc{Divisione con Resto}
+	\end{center}
+	
+	\textsf{Possiamo vedere ogni numero attraverso la struttura moltiplicativa imposta dall'altro:}\\
+	
+	\textbf{Teorema 1.}  Per ogni coppia di interi $ a \geq b $ esistono e sono unici interi $ q, r $ (detti quoziente e resto), con $ 0 \leq r < b $, tali che: \[ a = b \cdot q +r \]
+	
+	\textbf{Divisibilità.} Definizione e proprietà: transitiva, somma, coprimi. \\
+	
+	\textbf{Problema 1.} [Feb 13] Determinare tutte le terne di interi strettamente positivi $ (a, b, c) $ tali che
+	\begin{itemize}
+		\item  $ a \leq b \leq c $;
+		\item  $ MCD (a, b, c) = 1 $;
+		\item  $ a $ è divisore di $ b + c $, $ b $ è divisore di $ c + a $ e $ c $ è divisore di $ a + b $.
+	\end{itemize}
+
+	\begin{center}
+		\textsc{Congruenze}
+	\end{center}
+	\begin{enumerate}
+		\item  Che ora sarà tra esattamente $ 1000 $ ore?
+		
+		\textsf{Definizione, spiegazione, notazione...}
+		
+		\item What are the remainders when $ 3333 + 4444 $ and $ 3333 \cdot 4444 $ are divided by 5?
+		
+		\textsf{Osservazioni su come si comporta la congruenza contro le operazioni}
+		
+		\item What is the remainder when $ 2019^{2019} $ is divided by 2018?
+		
+		\textsf{Qualche parola sulla divisione}
+		
+		\item Is $ 21^{100} - 12^{100} $ a multiple of 11?
+		
+		\item What is the remainder when $ 7^{2019} $ is divided by 48?
+
+	\end{enumerate}
+	
+	\textbf{Problema 2.} Trovare la cifra delle unità di $ 3^{3^{\dots^3}} $, dove la cifra $ 3 $ compare ben cento volte. \\
+	
+	\textbf{Problema 3.} Trovare tutti i naturali $ n $ tali che \[ n + d(n) + d(d(n)) = 2019 \]
+	
+	\textsf{Qua si parla di criteri di divisibilità e criteri di congruenza!}\\
+	
+	\textbf{Problema 4.} Trovare tutte le terne di interi $ (a, b, c) $ tali che $$  a^2 + b^2 = 3c^2  $$
+	
+	\begin{center}
+		\textsc{Numeri primi}
+	\end{center}
+	\textsf{Definizione. Albero?}\\
+	
+	\textbf{Problema 5.} 641 è primo? 2019 è primo? $ 1{00\dots 00}1 $ con 2019 zeri è primo? $ 4^{545} + 545^4 $ è primo? $ n^5 + n^4 +1 $ è primo? \\
+	
+	\textsf{Decidere se un numero è primo o meno non è, generalmente, un problema facile. Quando si chiede di farlo in genere si cerca una fattorizzazione esplicita!}\\
+	
+	\textbf{Infinitudine.} \\
+	
+	\textbf{Problema 6.} Quali primi si possono scrivere come somma di due quadrati? \\
+
+	\textbf{Teorema Fondamentale dell'Aritmetica.} \\
+	
+	\textbf{Problema 7.} Trovare tutte le terne di naturali $ (p, m, n) $ con $ p $ primo tali che
+	\[ p^n +144 = m^2 \]
+	
+	
+	\textsf{Non dovrebbe avanzare tempo, ma, se succede, si può parlare di quel poco che si sa sui numeri primi: ci sono buchi arbitrariamente grandi, tra $ n $ e $ 2n $ c'è almeno un numero primo, primi gemelli, primi di SG...}
+	
+	
+	
+\end{multicols}
+
+\newpage
+
+\begin{multicols}{2}
+	\textsf{Voglio una lezione un po' più avanzata e un po meno specifica. L'argomento vorrebbe essere qualcosa del tipo "come si risolvono le diofantee"; l'introduzione è chiara: nessuno ha la più pallida idea di come si risolva una diofantea, in generale, magari con un bell'esempio mortale. Questo lascia per esempio ad intuire che i problemi delle Olimpiadi hanno la magica proprietà di avere sempre una soluzione elementare.}
+\end{multicols}
+
+\newgeometry{left=3cm,bottom=0.1cm}
+\Intitola
+\normalsize
+
+
+
+\begin{enumerate}
+	\item Dimostrare che, se $ p $ e $ p^2 +2 $ sono primi, anche $ p^3 +2 $ lo è.
+	
+	\item $  1 \cdot 3 \cdot 5 \cdots 2013 + 2 \cdot 4 \cdot 6 \cdots 2014  $ è divisibile per 2015?
+	
+	\item Trovare il resto quando:
+	\begin{itemize}
+		\item [(a)] 555 è diviso per 13 \\
+		\item [(b)] $ 555^2$ è diviso per 13\\
+		\item [(c)] $ 156 \cdot 167 $ è diviso per 7 \\
+		\item [(d)] $ 24^{50} - 15^{50} $ è diviso per 13\\
+		\item [(e)] $ 1 + 2 + \dots + 2007 $ è diviso per 1000\\
+		\item [(f)] $ 5^{15} $ è diviso per 128\\
+		\item [(g)]$  7^{7^7} $ è diviso per 10\\
+		\item [(h)] $ 12^9 $ è diviso per 1000\\
+	\end{itemize}
+	
+	
+	\item Quante sono le coppie di interi ordinate $ (x, y) $ tali che $ xy = 4(y^2 + x) $? [Feb 13] \\
+	
+	\item Dato un qualsiasi intero positivo $ n $, chiamiamo ciclostilato di $ n $ il numero che si ottiene concatenando 2012 scritture di $ n $ (in base 10). Per esempio il ciclostilato di 314 è $ 314314314\dots314 $, dove le cifre “314” si ripetono 2012 volte.
+	\begin{itemize}
+		\item [(a)] Determinare tutti gli interi positivi $ m $ tali che il ciclostilato di $ m $ sia multiplo di 9.
+		\item [(b)] Determinare tutti gli interi positivi $ m $ tali che il ciclostilato di $ m $ sia multiplo di 11.
+	\end{itemize}
+	
+	
+	\item Trovare tutte le coppie ordinate $ (x, y) $ di interi tali che $$  \dfrac{1}{x} + \dfrac{1}{y} = \dfrac{1}{6}  $$
+	
+\end{enumerate}
+
+\newgeometry{left=3cm,bottom=0.1cm}
+\begin{center}
+	\vspace*{0,5 cm}
+	{\Huge \textsc{Teoria dei Numeri}} \\
+	\vspace{0,5 cm}
+	\textsc{\Author} \hspace{1cm} \textsc{25 luglio 2018 - Palermo}
+	\thispagestyle{empty}
+	\vspace{0,7 cm}
+\end{center}
+\normalsize
+
+\begin{enumerate}
+	\item Dimostrare che, se $ p $ e $ p^2 +2 $ sono primi, anche $ p^3 +2 $ è primo.\\
+	
+	\item $  1 \cdot 3 \cdot 5 \cdots 3017 + 2 \cdot 4 \cdot 6 \cdots 3018  $ è divisibile per 3019?\\
+	
+	\item Esistono due interi positivi $ x $ e $ y $ tali che $ x+y $, $ x+2y $ e $ y+2x $ sono tutti e tre quadrati perfetti?\\
+	
+	\item Sia $ A = 77\dots 77 $ l'intero formato da 7777 cifre uguali a 7. Prendiamo la somma delle cifre di $ A^A $, dopodiché prendiamo la somma delle cifre di quanto ottenuto e ripetiamo il procedimento fino a quando non ci rimane un numero di una sola cifra. Di che numero si tratta?\\
+	
+	\item Un intero positivo $ n $ si dice \textit{bilanciato} se è prodotto di un numero pari di fattori primi. Dati due interi positivi $ a$ e $ b $, consideriamo il polinomio $ P(x) = (x+a)(x+b) $.
+	Dimostrare che:
+	\begin{itemize}
+		\item [(i)] Si possono scegliere $ a $ e $ b $ in modo che $ P(1),\, P(2),\,\dots ,\, P(2018) $ siano tutti bilanciati.
+		\item [(ii)] Se $ P(n) $ è bilanciato per ogni $ n $, allora $ a = b $.\\
+	\end{itemize}
+	
+	\item \emph{Difficile}: \[2^{2^5} +1 {\text{ è primo?}}\]
+	
+\end{enumerate}
+
+\newgeometry{left=3cm,bottom=0.1cm}
+\begin{center}
+	\vspace*{0,5 cm}
+	{\Huge \textsc{Teoria dei Numeri}} \\
+	\vspace{0,5 cm}
+	\textsc{Terni}
+	\thispagestyle{empty}
+	\vspace{0,7 cm}
+\end{center}
+\normalsize
+
+
+
+
+\begin{enumerate}
+	\item Trovare il resto quando:
+	\begin{itemize}
+		\item [(a)] 555 è diviso per 13
+		\item [(b)] $ 555^2$ è diviso per 13
+		\item [(c)] $ 156 \cdot 167 $ è diviso per 7
+		\item [(d)] $ 24^{50} - 15^{50} $ è diviso per 13
+		\item [(e)] $ 1 + 2 + \dots + 2007 $ è diviso per 1000
+		\item [(f)] $ 5^{15} $ è diviso per 128
+		\item [(g)]$  7^{7^7} $ è diviso per 10
+		\item [(h)] $ 12^9 $ è diviso per 1000 \\
+	\end{itemize}
+	
+	\item Esistono due interi positivi $ x $ e $ y $ tali che $ x+y $, $ x+2y $ e $ y+2x $ sono tutti e tre quadrati perfetti? \\
+	
+	\item (Febbraio 2012.) Dato un qualsiasi intero positivo $ n $, chiamiamo ciclostilato di $ n $ il numero che si ottiene concatenando 2012 scritture di $ n $ (in base 10). Per esempio il ciclostilato di 314 è $ 314314314\dots314 $, dove le cifre “314” si ripetono 2012 volte.
+	\begin{itemize}
+		\item [(a)] Determinare tutti gli interi positivi $ m $ tali che il ciclostilato di $ m $ sia multiplo di 9.
+		\item [(b)] Determinare tutti gli interi positivi $ m $ tali che il ciclostilato di $ m $ sia multiplo di 11. \\
+	\end{itemize}
+	
+	\item Se $ 2n + 1 $ e $ 3n + 1 $ sono quadrati perfetti, allora $ 5n + 3 $ non è un primo. \\
+	
+	\item[$ \star. $] (GAS 2014.) Ellisseo e i suoi compagni giungono nella grotta di Polinomio e scoprono ben presto che il ciclope possiede una
+	gran quantità di pecore. Dividendo le pecore in gruppi da 5, ne avanzano 3, mentre dividendole in gruppi da 7 ne
+	rimangono 2; infine dividendo le pecore in gruppi da 11, ne avanzano 7. Sapendo che ogni pecora ha 11 agnelli e che
+	tutti gli agnelli sono meno di 5000, quanti sono gli agnelli?
+	
+\end{enumerate}
+\end{document}
