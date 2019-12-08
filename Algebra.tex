@@ -250,9 +250,44 @@
 	\textbf{Problema 8.} Per il suo gioco preferito Andrea ha bisogno di usuali dadi a sei facce. Purtroppo Andrea ha perso i dadi originali, ma possiede un dado a 4 facce e un dado a 9 facce (la forma del dado non è rilevante, si sa che ogni faccia ha la stessa probabilità di uscire). In quali modi Andrea può disegnare i puntini sulle facce dei due dadi (mettendo almeno un puntino per faccia) in modo che lanciandoli e sommando i puntini si ottengano gli stessi esiti, con le stesse frequenze, che si otterrebbero con due ordinari dadi da 6? \\
 	
 	\textbf{Problema 5.} An unfair coin has a 2/3 probability of turning up heads. If this coin is tossed 50 times, what is the probability that the total number of heads is even? \\
+
 	
+\end{multicols}
+
+\begin{center}
+	\textsc{Disuguaglianze}
+\end{center}
+
+\begin{multicols}{2}
+	\textbf{Teorema 0.} I quadrati sono nonnegativi: $ x^2 \geq 0. $ \\
 	
+	\textbf{Problema 5.} Let $ c $ be the length of the hypotenuse of a right angle triangle whose other two sides have
+	lengths $ a $ and $ b $. Prove that $ a + b \geq 2c $. When does equality hold? (Canada, 1969)\\
 	
+	\textbf{Problema 4.} Dimostrare che $ (1+x)^n \geq 1+nx $ per ogni $ n \geq 1 $ intero e $ x > -1 $ reale.\\
+	
+	\textbf{Problema 1.} Dimostrare che per ogni scelta di $ a, \, b , \, c $ reali vale
+	\[ a^2 + b^2 + c^2 \geq ab + bc + ca. \]
+	
+	\textbf{Teorema 1.} (AM-GM) Per ogni $ n $-upla di numeri reali positivi vale
+		\[ \sqrt[n]{a_1a_2\dots a_n} = \frac{a_1 + a_2 + \dots + a_n}{n}. \]
+	
+	\textbf{Problema 2.} Presi tre reali positivi $a$, $b$, $c$ tali che $a+b+c = 36$, quanto può valere al massimo $abc$? Quanto può valere al massimo $a^3b^2c$? \\
+	
+	\textbf{Problema 6.} Trova, tra tutti i triangoli di perimetro $2$, quello di area massima.\\
+	
+	\textbf{Problema 3.} The diagonals of a convex quadrilateral intersect in $ O $. What is the smallest area
+	this quadrilateral can have, if the triangles $ AOB $ and $ COD $ have areas 4 and 9,
+	respectively?\\
+	
+	\textbf{Problema 7.} Show that $ (n + 1)^n \geq 2^n \cdot n! $ for $ n = 1,\, 2,\, 3,\, \dots $ \\
+	
+	\textbf{Problema 8.} Sia $ n $ un intero positivo. Un treno ferma in $ 2n $ stazioni, incluse quella iniziale e finale, numerate in
+	ordine dalla prima alla $ 2n $-esima. Si sa che in una certa carrozza, per ogni coppia di interi $ i,\, j $ tali
+	che $ 1 \leq i < j \leq 2n $, è stato prenotato esattamente un posto per il tragitto tra la stazione $ i $-esima
+	e quella $ j $-esima. Ovviamente prenotazioni diverse non possono sovrapporsi. Determinare, in
+	funzione di $ n $, il numero minimo di posti che devono essere disponibili in quella carrozza affinché
+	la situazione descritta sia possibile.
 	
 	
 	
@@ -281,12 +316,37 @@
 	p(-1) = -q(-1), p(-2) = -q(-2), p(-3) = -q(-3).
 	 $$	Qual è il minimo valore che può assumere $ [p(0)]^2 + [q(0)]^2 $ ? [Feb12]
 	 
-	 \item  (IMO 2006) Let P(x) be a polynomial of degree n > 1 with integer coefficients and let k be a
-	 positive integer. Consider the polynomial
-	 Q(x) = P(P(. . .(P(x). . .))
-	 | {z }
-	 k P 0s
-	 Prove that there are at most n integers t such that Q(t) = t.
+	 \item  (IMO 2006) Let $ P(x) $ be a polynomial of degree $ n > 1 $ with integer coefficients and let $ k $ be a positive integer. Consider the polynomial
+	 $$  Q(x) = \underbrace{P(P(\dots (P(x))\dots)}_{k \text{ times }}.  $$
+	 Prove that there are at most $ n $ integers $ t $ such that $ Q(t) = t $.
+	 
+	 \item Find a point $ P $ inside the triangle $ ABC $, such that the product $ P L \cdot P M \cdot P N $ is
+	 maximal. Here $ L $, $ M $, $ N $ are the feet of the perpendiculars from $ P $ onto $ BC $, $ CA $,
+	 $ AB $ (BrMO 1978).
+	 
+	 \item Fifty watches, all showing correct time, are on a table. Prove that at a certain moment
+	 the sum of the distances from the center $ O $ of the table to the endpoints of the minute
+	 hands is greater than the sums of the distances from $ O $ to the centers of the watches
+	 (AUO 1976).
+	 
+	 \item The diagonals of a convex quadrilateral intersect in $ O $. What is the smallest area
+	 this quadrilateral can have, if the triangles $ AOB $ and $ COD $ have areas 4 and 9,
+	 respectively?
+	 
+	 \item The product of three positive reals is 1. Their sum is greater than the sum of their
+	 reciprocals. Prove that exactly one of these numbers is $ > 1 $.
+	 
+	 \item Show that $ (n + 1)^n \geq 2^n \cdot n! $ for $ n = 1,\, 2,\, 3,\, \dots $ 
+	 
+	 \item Let $ m $ and $ n $ be positive integers. Find the minimum value of
+	 \[ x^m + \frac{1}{x^n} \]
+	 for $ x > 0 $.
+	 
+	 \item The Fibonacci sequence is $ F_n = 1,\, 1,\, 2,\, 3,\, \dots $. Prove that
+	 \[ \frac{1}{2} + \frac{1}{2^2} + \frac{2}{2^3} + \frac{3}{2^4} + \frac{5}{2^5} + \dots + \frac{F_n}{2^n} \leq 2 \]
+	 
+	 \item Let $ a $, $ b $, $ c $ be the sides of a triangle, and $ T $ its area. Prove: $ a^2+b^2+c^2 \geq 4\sqrt{3}T $. In what case does
+	 equality hold? (IMO, 1961)
 \end{enumerate}
 
 \newpage
@@ -341,6 +401,35 @@
 	\[ P(x) = \frac{(x-14^\pi)(x-12!^e)}{(17-14^\pi)(17-12!^e)} 
 	+\frac{(x-12!^e)(x-17)}{(14^\pi-12!^e)(14^\pi-17)} +\frac{(x-17)(x-14^\pi)}{(12!^e-17)(12!^e-14^\pi)} \]
 	al variare di $ x $ tra i numeri reali.
+	
+\end{enumerate}
+
+\newpage
+\begin{center}
+	\vspace*{0,5 cm}
+	{\Huge \textsc{Algebra}} \\
+	\vspace{0,5 cm}
+	\textsc{Novembre 2019 - Salerno}
+	\thispagestyle{empty}
+	\vspace{0,7 cm}
+\end{center}
+\normalsize
+
+\begin{enumerate}
+	\item Find the minimum value of
+	\[ x^{2019} + \frac{1}{x^{2020}} \]
+	for $ x > 0 $.
+	
+	\item Mostrare che per ogni numero naturale $ n \geq 1 $ vale
+	\[ 1 \cdot 3 \cdot 5 \cdots (2n-1) \leq n^n \]
+	
+	\item Let $ a $, $ b $, $ c $ be the sides of a triangle, and $ T $ its area. Prove: $ a^2+b^2+c^2 \geq 4\sqrt{3}T $. In what case does
+	equality hold? (IMO, 1961)
+	
+	\item Nesbitt.
+	\[ \frac{a}{b+c} + \frac{b}{c+a} + \frac{c}{a + b} \geq \frac{3}{2}. \]
+	
+	\item Trovare il massimo di $ x(x + 3y)(x + 5z) $, al variare di $ x, \, y, \, z $ tra i reali positivi, sotto il vincolo che $ x + y +z = 1 $.
 	
 \end{enumerate}
 

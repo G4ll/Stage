@@ -1,7 +1,7 @@
 \documentclass[a4paper]{article}
 
 \makeatletter
-\title{Teoria dei Numeri - Sassari}\let\Title\@title
+\title{Teoria dei Numeri}\let\Title\@title
 \author{Andrea Gallese}\let\Author\@author
 \date{\today}\let\Date\@date
 
@@ -263,8 +263,118 @@ $$  \boxed{2018 = 2 \cdot 1009}  $$
 \newpage
 
 \begin{multicols}{2}
-	\textsf{Voglio una lezione un po' più avanzata e un po meno specifica. L'argomento vorrebbe essere qualcosa del tipo "come si risolvono le diofantee"; l'introduzione è chiara: nessuno ha la più pallida idea di come si risolva una diofantea, in generale, magari con un bell'esempio mortale. Questo lascia per esempio ad intuire che i problemi delle Olimpiadi hanno la magica proprietà di avere sempre una soluzione elementare.}
+	\textsf{Voglio una lezione un po' più avanzata e un po meno specifica. L'argomento vorrebbe essere qualcosa del tipo "come si risolvono le diofantee"; l'introduzione è chiara: nessuno ha la più pallida idea di come si risolva una diofantea, in generale, magari con un bell'esempio mortale. Questo lascia intuire che i problemi delle Olimpiadi hanno la magica proprietà di avere sempre una soluzione elementare.}\\
+	
+	\textbf{Esempio mortale.} Sappiamo risolvere, negli interi positivi, 
+	\[ \frac{a}{b+c} + \frac{b}{c+a} + \frac{c}{a + b} = n \]
+	per $ n= 1 $ ma non per $ n=4 $.\\
+
+	\textbf{Teorema.} Siamo invece capaci di risolvere le diofantee lineari
+	\[ ax+by = c. \]
+	
+	\textbf{Problema 2.} [SNS 16] Trovare tutte le coppie di interi $ (x, \, y) $ che risolvono
+	$$  \dfrac{1}{x} + \dfrac{1}{y} = \dfrac{1}{6}.  $$
+	Che cosa succede se metto $ 6^{20} $ al posto di $ 6 $?\\
+	
+	\textsf{Il discorso qui è che la grande strategia di sempre è cercare di fattorizzare l'equazione, perché conosciamo bene la struttura moltiplicativa di $ \mathbb{Z} $. Segue discorso sul numero di divisori.} \\
+	
+	\textbf{Problema 8.} [1991 IMO Short List] Find all positive integer solutions to $$  3^x + 4^y = 5^z.  $$
+	
+	\textsf{La seconda strategia mistica è guardare che cosa succede all'equazione ``mod $ m $''. Se non sanno le congruenze è potenzialmente un disastro.}\\
+	
+	\textbf{Problema 9.} Determinare quanti sono i numeri interi (relativi) $ n $ tali che
+	\[n^2 + 85n + 2019\]
+	\`e un quadrato perfetto.\\
+	
+	\textsf{Bisogna trovare un modo dolce di introdurre l'idea di stringere tra quadrati.} \\
+	
+	\textbf{Problema 13.} [Febbraio 13] Quante sono le coppie di interi ordinate $ (x, y) $ tali che \[ xy = 4(y^2 + x)? \]
+	
+	\textsf{Se siamo arrivati fino a qui e non è ancora finita, abbiamo sbagliato qualcosa. Del tipo: in realtà i bimbi non stanno capendo nulla perché siamo andati troppo in fretta, in realtà i bimbi dovrebbero cominciare a provare a risolvere la Congettura di Goldbach, in realtà sei nel posto sbagliato... Comunque, possiamo parlare delle terne pitagoriche.}\\
+	
+	\textbf{Teorema.} Trovare tutte le terne di interi positivi $ (a, b, c) $ tali per cui
+	\[ a^2 + b^2 = c^2. \]
+	
+	
+	%% --------------------------------------------------------------
+	
+	
+	
+	
+	
 \end{multicols}
+
+\textbf{Problemi}.
+\begin{enumerate}
+	\item Find $ 3x^2y^2 $
+	if $ x $ and $ y $ are integers such that $ y^2+ 3x^2y^2= 30x^2 + 517. $ (AIME, 1987)
+	
+	\item The harmonic mean of two positive numbers is the reciprocal of the arithmetic mean of their reciprocals.
+	For how many ordered pairs of positive integers $ (x,\, y) $ with $ x < y $ is the harmonic mean of $ x $ and $ y $
+	equal to $ 6^{20} $? (AIME, 1996)
+	
+	\item The integer $ N $ is positive. There are exactly 2005 ordered pairs $ (x,\, y) $ of positive integers satisfying
+	\[ \frac{1}{x}+ \frac{1}{y} = \frac{1}{N}. \]
+	Prove that $ N $ is a perfect square. (British Mathematical Olympiad, 2005)
+	
+	\item [GHF] Non ci sono soluzioni intere di $ a^2b + ab^2 = x^3 $.
+	
+	\item Determinare per quanti valori interi di a il numero $ 2a^2+27a+91 $ risulta un quadrato perfetto.
+	
+	\item Determinare tutti gli interi positivi a con questa propriet\`a: comunque si scelga un intero
+	positivo $ n $, il numero $ n(a + n) $ non \`e un quadrato perfetto.
+	
+	\item Determinare quante sono le coppie (p, m) in cui p `e un numero primo (e quindi positivo), m `e
+	un numero intero (relativo) e
+	\[p(m - 78p) = (m - 3)3 + 3p.\]
+	
+	\item  Determinare tutte le terne $ (p, x, y) $ in cui $ p $ \`e un numero primo e $ (x, y) $ \`e una coppia di numeri
+	interi tali che
+	\[	x^3
+	(x^3 + y) = py^2
+	.\]
+	
+	\item Determinare tutte le coppie $ (p, n) $ in cui $ p $ \`e un numero primo, $ n $ \`e un intero positivo e
+	\[p^8 - p^4 = n^5 - n.\]
+	
+	\item [Cese 15] Determinare tutte le coppie di numeri interi $ (a, b) $ che risolvono l’equazione \[a^3 + b^3 + 3ab = 1.\]
+	
+	\item [Senior 19] Determinare tutte le coppie $ (a,\, b) $ di interi positivi per cui esiste un numero primo $ p $ tale che
+	\[9^a + 3^a - 2 = 2p^b.\]
+	
+	\item  Trovare tutte le terne di numeri interi $ (a, b, c) $ tali che
+	\[ a^2 + b^2 = 3c^2. \]
+	
+	% discesa infinita
+	
+	\item  [Ungheria] Let $ x $, $ y $, and $ z $ be rational numbers satisfying
+	\[x^3 + 3y^3 + 9z^3 - 9xyz = 0.\]
+	
+	% stringere fra quadrati
+	% vorrei anche un esercizio in cui questa cosa succede in modo più furbo: devo risolvere una quadratica e per farlo mi serve stringere fra quadrati
+	
+	
+	\item  Determinare quante sono le coppie $ (m, n) $ di numeri interi (relativi) tali che
+	\[n^2 - 6n = m^2 + m - 12.\]
+	
+	% fattorizzare: JFFT, polinomio da fattorizzare
+	
+	\item  Trovare tutte le terne di naturali $ (p, m, n) $ con $ p $ primo tali che
+	\[ p^n +144 = m^2. \]
+	
+	
+	% disuguaglianze per stringere i casi
+	
+	\item  Find all positive integers $ n $ such that $$  1 + 2^2 + 3^3 + 4^n  $$ is a perfect square.\\
+	
+	\item  Trovare tutte le terne di interi $ (x, y, z) $ per cui vale, per ogni $ n $, che \[ x^n + y^n + z^n = 0. \]
+	
+	\item  \[ m(n+3) = n^4 + 2016 \]
+	
+	
+	
+	% equazioni che bisogna saper risolvere: lineari, pitagorica, pell (che però non ti serviranno mai a nulla)
+\end{enumerate}
 
 \newgeometry{left=3cm,bottom=0.1cm}
 \Intitola
@@ -377,4 +487,38 @@ $$  \boxed{2018 = 2 \cdot 1009}  $$
 	tutti gli agnelli sono meno di 5000, quanti sono gli agnelli?
 	
 \end{enumerate}
+
+\newgeometry{left=3cm,bottom=0.1cm}
+\begin{center}
+	\vspace*{0,5 cm}
+	{\Huge \textsc{Teoria dei Numeri}} \\
+	\vspace{0,5 cm}
+	\textsc{Salerno}
+	\thispagestyle{empty}
+	\vspace{0,7 cm}
+\end{center}
+\normalsize
+
+
+
+
+\begin{enumerate}
+	\item Trovare tutte le coppie $ (x, y) $ di interi relativi per cui vale
+	\[ 24x + 35y = 17. \]
+	
+	\item Find $ 3x^2y^2 $
+	if $ x $ and $ y $ are integers such that $ y^2+ 3x^2y^2= 30x^2 + 517. $ (AIME, 1987)\\
+	
+	\item The integer $ N $ is positive. There are exactly 2005 ordered pairs $ (x,\, y) $ of positive integers satisfying
+	\[ \frac{1}{x}+ \frac{1}{y} = \frac{1}{N}. \]
+	Prove that $ N $ is a perfect square. (British Mathematical Olympiad, 2005)\\
+	
+	\item  Determinare quante sono le coppie $ (m, n) $ di numeri interi (relativi) tali che
+	\[n^2 - 6n = m^2 + m - 12.\]
+	
+	\item  Trovare tutte le terne di numeri interi $ (a, b, c) $ tali che
+	\[ a^2 + b^2 = 3c^2. \]
+	
+\end{enumerate}
+
 \end{document}
