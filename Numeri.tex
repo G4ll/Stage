@@ -11,7 +11,7 @@
 \usepackage{mathtools}
 \usepackage{amssymb}
 \usepackage{amsthm}
-\usepackage{faktor}
+%\usepackage{faktor}
 \usepackage{wasysym}
 
 \usepackage[margin=1.5cm]{geometry}
@@ -79,414 +79,414 @@
 \renewcommand\labelitemi{-}
 
 \begin{document}
-\Intitola
-\small
+%\Intitola
+%\small
 
-\begin{multicols}{2}
+%\begin{multicols}{2}
 
-
-\begin{center}
-	\textsc{Divisione con Resto}
-\end{center}
-
-\textsf{Cos'è, proprietà.}\\
-
-\textbf{Problema 1.} Dimostrare che $2^{32 }+1 $ è divisibile per $ 641 $.\\
-
-\textsf{La soluzione è assolutamente magica: $ 641 = 2^4 + 5^4 = 2^7 \cdot 5 -1 $, pertanto $ 641 \mid 2^{28}\cdot 5^4 - 1 $ e $ 641 \mid  2^{28}\cdot 5^4 + 2^{32} $.}\\
-
-\textbf{Problema 2.} [Feb 13] Determinare tutte le terne di interi strettamente positivi $ (a, b, c) $ tali che
-\begin{itemize}
-	\item  $ a \leq b \leq c $;
-	\item  $ MCD (a, b, c) = 1 $;
-	\item  $ a $ è divisore di $ b + c $, $ b $ è divisore di $ c + a $ e $ c $ è divisore di $ a + b $.
-\end{itemize}
-  
-  
-\begin{center}
-	\textsc{Numeri primi}
-\end{center}
-\textsf{Definizione}\\
-
-\textbf{Problema 3.} $ 4^{545} + 545^4 $ è primo?
-
-\begin{center}
-	\textsc{Teorema Fondamentale dell'Aritmetica}
-\end{center}
-\textsf{Enunciato (che non si capisce)}
-$$  \boxed{2018 = 2 \cdot 1009}  $$
-\textbf{Problema 4.} Trovare tutte le terne di interi $ (a, b, c) $ tali che $$  a^2 + b^2 = 3c^2  $$ 
-\columnbreak
-
-\begin{center}
-	\textsc{Congruenze}
-\end{center}
-\begin{enumerate}
-	\item  Che ora sarà tra esattamente $ 1000 $ ore?
-	
-	\textsf{Definizione, spiegazione, notazione...}
-	
-	\item What are the remainders when $ 3333 + 4444 $ and $ 3333 \cdot 4444 $ are divided by 5?
-	
-	\textsf{Osservazioni su come si comporta la congruenza contro le operazioni}
-	
-	\item What is the remainder when $ 2015^{2015} $ is divided by 2014?
-	
-	\textsf{Qualche parola sulla divisione}
-	
-	\item Is $ 21^{100} - 12^{100} $ a multiple of 11?
-	\item What is the remainder when $ 7^{2015} $ is divided by 48?
-	\item What are the last two digits of the integer $ 17^{198} $?
-	\item Criteri di congruenza. Per $ 2^n $, $ 3 $, $ 9 $, $ 11 $.
-\end{enumerate}
-
-\end{multicols}
-
-\textbf{Problemi da proporre.}
-\begin{multicols}{2}
-	\begin{enumerate}
-		\item Dimostrare che, se $ p $ e $ p^2 +2 $ sono primi, anche $ p^3 +2 $ lo è.
-		
-		\item $  1 \cdot 3 \cdot 5 \cdots 2013 + 2 \cdot 4 \cdot 6 \cdots 2014  $ è divisibile per 2015?
-		
-		\item Trovare il resto quando:
-		\begin{itemize}
-			\item [(a)] 555 è diviso per 13 \\
-			\item [(b)] $ 555^2$ è diviso per 13\\
-			\item [(c)] $ 156 \cdot 167 $ è diviso per 7 \\
-			\item [(d)] $ 24^{50} - 15^{50} $ è diviso per 13\\
-			\item [(e)] $ 1 + 2 + \dots + 2007 $ è diviso per 1000\\
-			\item [(f)] $ 5^{15} $ è diviso per 128\\
-			\item [(g)]$  7^{7^7} $ è diviso per 10\\
-			\item [(h)] $ 12^9 $ è diviso per 1000\\
-		\end{itemize}
-		
-		
-		\item Quante sono le coppie di interi ordinate $ (x, y) $ tali che $ xy = 4(y^2 + x) $? [Feb 13] \\
-		
-		\item Dato un qualsiasi intero positivo $ n $, chiamiamo ciclostilato di $ n $ il numero che si ottiene concatenando 2012 scritture di $ n $ (in base 10). Per esempio il ciclostilato di 314 è $ 314314314\dots314 $, dove le cifre “314” si ripetono 2012 volte.
-		\begin{itemize}
-			\item [(a)] Determinare tutti gli interi positivi $ m $ tali che il ciclostilato di $ m $ sia multiplo di 9.
-			\item [(b)] Determinare tutti gli interi positivi $ m $ tali che il ciclostilato di $ m $ sia multiplo di 11.
-		\end{itemize}
-	
-		
-		\item $ \dfrac{1}{x} + \dfrac{1}{y} = \dfrac{1}{6} $
-		
-		\item Trovare tutte le coppie di interi tali che $ a^2 + b^2 = 8070 $.
-		
-		\item Quante sono le coppie di interi positivi $(a,b)$ con $a<b$ tali che $MCD(a,b)=2$ e $mcm(a,b)=660$?
-		
-		\item $ (n, n+1) = 1 $
-		
-		\item $ (a, b)[a, b] = ab $
-		
-	\end{enumerate}
-\end{multicols}
-
-\newpage
-\begin{multicols}{2}
-	
-	
-	\begin{center}
-		\textsc{Divisione con Resto}
-	\end{center}
-	
-	\textsf{Possiamo vedere ogni numero attraverso la struttura moltiplicativa imposta dall'altro:}\\
-	
-	\textbf{Teorema 1.}  Per ogni coppia di interi $ a \geq b $ esistono e sono unici interi $ q, r $ (detti quoziente e resto), con $ 0 \leq r < b $, tali che: \[ a = b \cdot q +r \]
-	
-	\textbf{Divisibilità.} Definizione e proprietà: transitiva, somma, coprimi. \\
-	
-	\textbf{Problema 1.} [Feb 13] Determinare tutte le terne di interi strettamente positivi $ (a, b, c) $ tali che
-	\begin{itemize}
-		\item  $ a \leq b \leq c $;
-		\item  $ MCD (a, b, c) = 1 $;
-		\item  $ a $ è divisore di $ b + c $, $ b $ è divisore di $ c + a $ e $ c $ è divisore di $ a + b $.
-	\end{itemize}
-
-	\begin{center}
-		\textsc{Congruenze}
-	\end{center}
-	\begin{enumerate}
-		\item  Che ora sarà tra esattamente $ 1000 $ ore?
-		
-		\textsf{Definizione, spiegazione, notazione...}
-		
-		\item What are the remainders when $ 3333 + 4444 $ and $ 3333 \cdot 4444 $ are divided by 5?
-		
-		\textsf{Osservazioni su come si comporta la congruenza contro le operazioni}
-		
-		\item What is the remainder when $ 2019^{2019} $ is divided by 2018?
-		
-		\textsf{Qualche parola sulla divisione}
-		
-		\item Is $ 21^{100} - 12^{100} $ a multiple of 11?
-		
-		\item What is the remainder when $ 7^{2019} $ is divided by 48?
-
-	\end{enumerate}
-	
-	\textbf{Problema 2.} Trovare la cifra delle unità di $ 3^{3^{\dots^3}} $, dove la cifra $ 3 $ compare ben cento volte. \\
-	
-	\textbf{Problema 3.} Trovare tutti i naturali $ n $ tali che \[ n + d(n) + d(d(n)) = 2019 \]
-	
-	\textsf{Qua si parla di criteri di divisibilità e criteri di congruenza!}\\
-	
-	\textbf{Problema 4.} Trovare tutte le terne di interi $ (a, b, c) $ tali che $$  a^2 + b^2 = 3c^2  $$
-	
-	\begin{center}
-		\textsc{Numeri primi}
-	\end{center}
-	\textsf{Definizione. Albero?}\\
-	
-	\textbf{Problema 5.} 641 è primo? 2019 è primo? $ 1{00\dots 00}1 $ con 2019 zeri è primo? $ 4^{545} + 545^4 $ è primo? $ n^5 + n^4 +1 $ è primo? \\
-	
-	\textsf{Decidere se un numero è primo o meno non è, generalmente, un problema facile. Quando si chiede di farlo in genere si cerca una fattorizzazione esplicita!}\\
-	
-	\textbf{Infinitudine.} \\
-	
-	\textbf{Problema 6.} Quali primi si possono scrivere come somma di due quadrati? \\
-
-	\textbf{Teorema Fondamentale dell'Aritmetica.} \\
-	
-	\textbf{Problema 7.} Trovare tutte le terne di naturali $ (p, m, n) $ con $ p $ primo tali che
-	\[ p^n +144 = m^2 \]
-	
-	
-	\textsf{Non dovrebbe avanzare tempo, ma, se succede, si può parlare di quel poco che si sa sui numeri primi: ci sono buchi arbitrariamente grandi, tra $ n $ e $ 2n $ c'è almeno un numero primo, primi gemelli, primi di SG...}
-	
-	
-	
-\end{multicols}
-
-\newpage
-
-\begin{multicols}{2}
-	\textsf{Voglio una lezione un po' più avanzata e un po meno specifica. L'argomento vorrebbe essere qualcosa del tipo "come si risolvono le diofantee"; l'introduzione è chiara: nessuno ha la più pallida idea di come si risolva una diofantea, in generale, magari con un bell'esempio mortale. Questo lascia intuire che i problemi delle Olimpiadi hanno la magica proprietà di avere sempre una soluzione elementare.}\\
-	
-	\textbf{Esempio mortale.} Sappiamo risolvere, negli interi positivi, 
-	\[ \frac{a}{b+c} + \frac{b}{c+a} + \frac{c}{a + b} = n \]
-	per $ n= 1 $ ma non per $ n=4 $.\\
-
-	\textbf{Teorema.} Siamo invece capaci di risolvere le diofantee lineari
-	\[ ax+by = c. \]
-	
-	\textbf{Problema 2.} [SNS 16] Trovare tutte le coppie di interi $ (x, \, y) $ che risolvono
-	$$  \dfrac{1}{x} + \dfrac{1}{y} = \dfrac{1}{6}.  $$
-	Che cosa succede se metto $ 6^{20} $ al posto di $ 6 $?\\
-	
-	\textsf{Il discorso qui è che la grande strategia di sempre è cercare di fattorizzare l'equazione, perché conosciamo bene la struttura moltiplicativa di $ \mathbb{Z} $. Segue discorso sul numero di divisori.} \\
-	
-	\textbf{Problema 8.} [1991 IMO Short List] Find all positive integer solutions to $$  3^x + 4^y = 5^z.  $$
-	
-	\textsf{La seconda strategia mistica è guardare che cosa succede all'equazione ``mod $ m $''. Se non sanno le congruenze è potenzialmente un disastro.}\\
-	
-	\textbf{Problema 9.} Determinare quanti sono i numeri interi (relativi) $ n $ tali che
-	\[n^2 + 85n + 2019\]
-	\`e un quadrato perfetto.\\
-	
-	\textsf{Bisogna trovare un modo dolce di introdurre l'idea di stringere tra quadrati.} \\
-	
-	\textbf{Problema 13.} [Febbraio 13] Quante sono le coppie di interi ordinate $ (x, y) $ tali che \[ xy = 4(y^2 + x)? \]
-	
-	\textsf{Se siamo arrivati fino a qui e non è ancora finita, abbiamo sbagliato qualcosa. Del tipo: in realtà i bimbi non stanno capendo nulla perché siamo andati troppo in fretta, in realtà i bimbi dovrebbero cominciare a provare a risolvere la Congettura di Goldbach, in realtà sei nel posto sbagliato... Comunque, possiamo parlare delle terne pitagoriche.}\\
-	
-	\textbf{Teorema.} Trovare tutte le terne di interi positivi $ (a, b, c) $ tali per cui
-	\[ a^2 + b^2 = c^2. \]
-	
-	
-	%% --------------------------------------------------------------
-	
-	
-	
-	
-	
-\end{multicols}
-
-\textbf{Problemi}.
-\begin{enumerate}
-	\item Find $ 3x^2y^2 $
-	if $ x $ and $ y $ are integers such that $ y^2+ 3x^2y^2= 30x^2 + 517. $ (AIME, 1987)
-	
-	\item The harmonic mean of two positive numbers is the reciprocal of the arithmetic mean of their reciprocals.
-	For how many ordered pairs of positive integers $ (x,\, y) $ with $ x < y $ is the harmonic mean of $ x $ and $ y $
-	equal to $ 6^{20} $? (AIME, 1996)
-	
-	\item The integer $ N $ is positive. There are exactly 2005 ordered pairs $ (x,\, y) $ of positive integers satisfying
-	\[ \frac{1}{x}+ \frac{1}{y} = \frac{1}{N}. \]
-	Prove that $ N $ is a perfect square. (British Mathematical Olympiad, 2005)
-	
-	\item [GHF] Non ci sono soluzioni intere di $ a^2b + ab^2 = x^3 $.
-	
-	\item Determinare per quanti valori interi di a il numero $ 2a^2+27a+91 $ risulta un quadrato perfetto.
-	
-	\item Determinare tutti gli interi positivi a con questa propriet\`a: comunque si scelga un intero
-	positivo $ n $, il numero $ n(a + n) $ non \`e un quadrato perfetto.
-	
-	\item Determinare quante sono le coppie (p, m) in cui p `e un numero primo (e quindi positivo), m `e
-	un numero intero (relativo) e
-	\[p(m - 78p) = (m - 3)3 + 3p.\]
-	
-	\item  Determinare tutte le terne $ (p, x, y) $ in cui $ p $ \`e un numero primo e $ (x, y) $ \`e una coppia di numeri
-	interi tali che
-	\[	x^3
-	(x^3 + y) = py^2
-	.\]
-	
-	\item Determinare tutte le coppie $ (p, n) $ in cui $ p $ \`e un numero primo, $ n $ \`e un intero positivo e
-	\[p^8 - p^4 = n^5 - n.\]
-	
-	\item [Cese 15] Determinare tutte le coppie di numeri interi $ (a, b) $ che risolvono l’equazione \[a^3 + b^3 + 3ab = 1.\]
-	
-	\item [Senior 19] Determinare tutte le coppie $ (a,\, b) $ di interi positivi per cui esiste un numero primo $ p $ tale che
-	\[9^a + 3^a - 2 = 2p^b.\]
-	
-	\item  Trovare tutte le terne di numeri interi $ (a, b, c) $ tali che
-	\[ a^2 + b^2 = 3c^2. \]
-	
-	% discesa infinita
-	
-	\item  [Ungheria] Let $ x $, $ y $, and $ z $ be rational numbers satisfying
-	\[x^3 + 3y^3 + 9z^3 - 9xyz = 0.\]
-	
-	% stringere fra quadrati
-	% vorrei anche un esercizio in cui questa cosa succede in modo più furbo: devo risolvere una quadratica e per farlo mi serve stringere fra quadrati
-	
-	
-	\item  Determinare quante sono le coppie $ (m, n) $ di numeri interi (relativi) tali che
-	\[n^2 - 6n = m^2 + m - 12.\]
-	
-	% fattorizzare: JFFT, polinomio da fattorizzare
-	
-	\item  Trovare tutte le terne di naturali $ (p, m, n) $ con $ p $ primo tali che
-	\[ p^n +144 = m^2. \]
-	
-	
-	% disuguaglianze per stringere i casi
-	
-	\item  Find all positive integers $ n $ such that $$  1 + 2^2 + 3^3 + 4^n  $$ is a perfect square.\\
-	
-	\item  Trovare tutte le terne di interi $ (x, y, z) $ per cui vale, per ogni $ n $, che \[ x^n + y^n + z^n = 0. \]
-	
-	\item  \[ m(n+3) = n^4 + 2016 \]
-	
-	
-	
-	% equazioni che bisogna saper risolvere: lineari, pitagorica, pell (che però non ti serviranno mai a nulla)
-\end{enumerate}
-
-\newgeometry{left=3cm,bottom=0.1cm}
-\Intitola
-\normalsize
-
-
-
-\begin{enumerate}
-	\item Dimostrare che, se $ p $ e $ p^2 +2 $ sono primi, anche $ p^3 +2 $ lo è.
-	
-	\item $  1 \cdot 3 \cdot 5 \cdots 2013 + 2 \cdot 4 \cdot 6 \cdots 2014  $ è divisibile per 2015?
-	
-	\item Trovare il resto quando:
-	\begin{itemize}
-		\item [(a)] 555 è diviso per 13 \\
-		\item [(b)] $ 555^2$ è diviso per 13\\
-		\item [(c)] $ 156 \cdot 167 $ è diviso per 7 \\
-		\item [(d)] $ 24^{50} - 15^{50} $ è diviso per 13\\
-		\item [(e)] $ 1 + 2 + \dots + 2007 $ è diviso per 1000\\
-		\item [(f)] $ 5^{15} $ è diviso per 128\\
-		\item [(g)]$  7^{7^7} $ è diviso per 10\\
-		\item [(h)] $ 12^9 $ è diviso per 1000\\
-	\end{itemize}
-	
-	
-	\item Quante sono le coppie di interi ordinate $ (x, y) $ tali che $ xy = 4(y^2 + x) $? [Feb 13] \\
-	
-	\item Dato un qualsiasi intero positivo $ n $, chiamiamo ciclostilato di $ n $ il numero che si ottiene concatenando 2012 scritture di $ n $ (in base 10). Per esempio il ciclostilato di 314 è $ 314314314\dots314 $, dove le cifre “314” si ripetono 2012 volte.
-	\begin{itemize}
-		\item [(a)] Determinare tutti gli interi positivi $ m $ tali che il ciclostilato di $ m $ sia multiplo di 9.
-		\item [(b)] Determinare tutti gli interi positivi $ m $ tali che il ciclostilato di $ m $ sia multiplo di 11.
-	\end{itemize}
-	
-	
-	\item Trovare tutte le coppie ordinate $ (x, y) $ di interi tali che $$  \dfrac{1}{x} + \dfrac{1}{y} = \dfrac{1}{6}  $$
-	
-\end{enumerate}
-
-\newgeometry{left=3cm,bottom=0.1cm}
-\begin{center}
-	\vspace*{0,5 cm}
-	{\Huge \textsc{Teoria dei Numeri}} \\
-	\vspace{0,5 cm}
-	\textsc{\Author} \hspace{1cm} \textsc{25 luglio 2018 - Palermo}
-	\thispagestyle{empty}
-	\vspace{0,7 cm}
-\end{center}
-\normalsize
-
-\begin{enumerate}
-	\item Dimostrare che, se $ p $ e $ p^2 +2 $ sono primi, anche $ p^3 +2 $ è primo.\\
-	
-	\item $  1 \cdot 3 \cdot 5 \cdots 3017 + 2 \cdot 4 \cdot 6 \cdots 3018  $ è divisibile per 3019?\\
-	
-	\item Esistono due interi positivi $ x $ e $ y $ tali che $ x+y $, $ x+2y $ e $ y+2x $ sono tutti e tre quadrati perfetti?\\
-	
-	\item Sia $ A = 77\dots 77 $ l'intero formato da 7777 cifre uguali a 7. Prendiamo la somma delle cifre di $ A^A $, dopodiché prendiamo la somma delle cifre di quanto ottenuto e ripetiamo il procedimento fino a quando non ci rimane un numero di una sola cifra. Di che numero si tratta?\\
-	
-	\item Un intero positivo $ n $ si dice \textit{bilanciato} se è prodotto di un numero pari di fattori primi. Dati due interi positivi $ a$ e $ b $, consideriamo il polinomio $ P(x) = (x+a)(x+b) $.
-	Dimostrare che:
-	\begin{itemize}
-		\item [(i)] Si possono scegliere $ a $ e $ b $ in modo che $ P(1),\, P(2),\,\dots ,\, P(2018) $ siano tutti bilanciati.
-		\item [(ii)] Se $ P(n) $ è bilanciato per ogni $ n $, allora $ a = b $.\\
-	\end{itemize}
-	
-	\item \emph{Difficile}: \[2^{2^5} +1 {\text{ è primo?}}\]
-	
-\end{enumerate}
-
-\newgeometry{left=3cm,bottom=0.1cm}
-\begin{center}
-	\vspace*{0,5 cm}
-	{\Huge \textsc{Teoria dei Numeri}} \\
-	\vspace{0,5 cm}
-	\textsc{Terni}
-	\thispagestyle{empty}
-	\vspace{0,7 cm}
-\end{center}
-\normalsize
-
-
-
-
-\begin{enumerate}
-	\item Trovare il resto quando:
-	\begin{itemize}
-		\item [(a)] 555 è diviso per 13
-		\item [(b)] $ 555^2$ è diviso per 13
-		\item [(c)] $ 156 \cdot 167 $ è diviso per 7
-		\item [(d)] $ 24^{50} - 15^{50} $ è diviso per 13
-		\item [(e)] $ 1 + 2 + \dots + 2007 $ è diviso per 1000
-		\item [(f)] $ 5^{15} $ è diviso per 128
-		\item [(g)]$  7^{7^7} $ è diviso per 10
-		\item [(h)] $ 12^9 $ è diviso per 1000 \\
-	\end{itemize}
-	
-	\item Esistono due interi positivi $ x $ e $ y $ tali che $ x+y $, $ x+2y $ e $ y+2x $ sono tutti e tre quadrati perfetti? \\
-	
-	\item (Febbraio 2012.) Dato un qualsiasi intero positivo $ n $, chiamiamo ciclostilato di $ n $ il numero che si ottiene concatenando 2012 scritture di $ n $ (in base 10). Per esempio il ciclostilato di 314 è $ 314314314\dots314 $, dove le cifre “314” si ripetono 2012 volte.
-	\begin{itemize}
-		\item [(a)] Determinare tutti gli interi positivi $ m $ tali che il ciclostilato di $ m $ sia multiplo di 9.
-		\item [(b)] Determinare tutti gli interi positivi $ m $ tali che il ciclostilato di $ m $ sia multiplo di 11. \\
-	\end{itemize}
-	
-	\item Se $ 2n + 1 $ e $ 3n + 1 $ sono quadrati perfetti, allora $ 5n + 3 $ non è un primo. \\
-	
-	\item[$ \star. $] (GAS 2014.) Ellisseo e i suoi compagni giungono nella grotta di Polinomio e scoprono ben presto che il ciclope possiede una
-	gran quantità di pecore. Dividendo le pecore in gruppi da 5, ne avanzano 3, mentre dividendole in gruppi da 7 ne
-	rimangono 2; infine dividendo le pecore in gruppi da 11, ne avanzano 7. Sapendo che ogni pecora ha 11 agnelli e che
-	tutti gli agnelli sono meno di 5000, quanti sono gli agnelli?
-	
-\end{enumerate}
+%
+%\begin{center}
+%	\textsc{Divisione con Resto}
+%\end{center}
+%
+%\textsf{Cos'è, proprietà.}\\
+%
+%\textbf{Problema 1.} Dimostrare che $2^{32 }+1 $ è divisibile per $ 641 $.\\
+%
+%\textsf{La soluzione è assolutamente magica: $ 641 = 2^4 + 5^4 = 2^7 \cdot 5 -1 $, pertanto $ 641 \mid 2^{28}\cdot 5^4 - 1 $ e $ 641 \mid  2^{28}\cdot 5^4 + 2^{32} $.}\\
+%
+%\textbf{Problema 2.} [Feb 13] Determinare tutte le terne di interi strettamente positivi $ (a, b, c) $ tali che
+%\begin{itemize}
+%	\item  $ a \leq b \leq c $;
+%	\item  $ MCD (a, b, c) = 1 $;
+%	\item  $ a $ è divisore di $ b + c $, $ b $ è divisore di $ c + a $ e $ c $ è divisore di $ a + b $.
+%\end{itemize}
+%  
+%  
+%\begin{center}
+%	\textsc{Numeri primi}
+%\end{center}
+%\textsf{Definizione}\\
+%
+%\textbf{Problema 3.} $ 4^{545} + 545^4 $ è primo?
+%
+%\begin{center}
+%	\textsc{Teorema Fondamentale dell'Aritmetica}
+%\end{center}
+%\textsf{Enunciato (che non si capisce)}
+%$$  \boxed{2018 = 2 \cdot 1009}  $$
+%\textbf{Problema 4.} Trovare tutte le terne di interi $ (a, b, c) $ tali che $$  a^2 + b^2 = 3c^2  $$ 
+%\columnbreak
+%
+%\begin{center}
+%	\textsc{Congruenze}
+%\end{center}
+%\begin{enumerate}
+%	\item  Che ora sarà tra esattamente $ 1000 $ ore?
+%	
+%	\textsf{Definizione, spiegazione, notazione...}
+%	
+%	\item What are the remainders when $ 3333 + 4444 $ and $ 3333 \cdot 4444 $ are divided by 5?
+%	
+%	\textsf{Osservazioni su come si comporta la congruenza contro le operazioni}
+%	
+%	\item What is the remainder when $ 2015^{2015} $ is divided by 2014?
+%	
+%	\textsf{Qualche parola sulla divisione}
+%	
+%	\item Is $ 21^{100} - 12^{100} $ a multiple of 11?
+%	\item What is the remainder when $ 7^{2015} $ is divided by 48?
+%	\item What are the last two digits of the integer $ 17^{198} $?
+%	\item Criteri di congruenza. Per $ 2^n $, $ 3 $, $ 9 $, $ 11 $.
+%\end{enumerate}
+%
+%\end{multicols}
+%
+%\textbf{Problemi da proporre.}
+%\begin{multicols}{2}
+%	\begin{enumerate}
+%		\item Dimostrare che, se $ p $ e $ p^2 +2 $ sono primi, anche $ p^3 +2 $ lo è.
+%		
+%		\item $  1 \cdot 3 \cdot 5 \cdots 2013 + 2 \cdot 4 \cdot 6 \cdots 2014  $ è divisibile per 2015?
+%		
+%		\item Trovare il resto quando:
+%		\begin{itemize}
+%			\item [(a)] 555 è diviso per 13 \\
+%			\item [(b)] $ 555^2$ è diviso per 13\\
+%			\item [(c)] $ 156 \cdot 167 $ è diviso per 7 \\
+%			\item [(d)] $ 24^{50} - 15^{50} $ è diviso per 13\\
+%			\item [(e)] $ 1 + 2 + \dots + 2007 $ è diviso per 1000\\
+%			\item [(f)] $ 5^{15} $ è diviso per 128\\
+%			\item [(g)]$  7^{7^7} $ è diviso per 10\\
+%			\item [(h)] $ 12^9 $ è diviso per 1000\\
+%		\end{itemize}
+%		
+%		
+%		\item Quante sono le coppie di interi ordinate $ (x, y) $ tali che $ xy = 4(y^2 + x) $? [Feb 13] \\
+%		
+%		\item Dato un qualsiasi intero positivo $ n $, chiamiamo ciclostilato di $ n $ il numero che si ottiene concatenando 2012 scritture di $ n $ (in base 10). Per esempio il ciclostilato di 314 è $ 314314314\dots314 $, dove le cifre “314” si ripetono 2012 volte.
+%		\begin{itemize}
+%			\item [(a)] Determinare tutti gli interi positivi $ m $ tali che il ciclostilato di $ m $ sia multiplo di 9.
+%			\item [(b)] Determinare tutti gli interi positivi $ m $ tali che il ciclostilato di $ m $ sia multiplo di 11.
+%		\end{itemize}
+%	
+%		
+%		\item $ \dfrac{1}{x} + \dfrac{1}{y} = \dfrac{1}{6} $
+%		
+%		\item Trovare tutte le coppie di interi tali che $ a^2 + b^2 = 8070 $.
+%		
+%		\item Quante sono le coppie di interi positivi $(a,b)$ con $a<b$ tali che $MCD(a,b)=2$ e $mcm(a,b)=660$?
+%		
+%		\item $ (n, n+1) = 1 $
+%		
+%		\item $ (a, b)[a, b] = ab $
+%		
+%	\end{enumerate}
+%\end{multicols}
+%
+%\newpage
+%\begin{multicols}{2}
+%	
+%	
+%	\begin{center}
+%		\textsc{Divisione con Resto}
+%	\end{center}
+%	
+%	\textsf{Possiamo vedere ogni numero attraverso la struttura moltiplicativa imposta dall'altro:}\\
+%	
+%	\textbf{Teorema 1.}  Per ogni coppia di interi $ a \geq b $ esistono e sono unici interi $ q, r $ (detti quoziente e resto), con $ 0 \leq r < b $, tali che: \[ a = b \cdot q +r \]
+%	
+%	\textbf{Divisibilità.} Definizione e proprietà: transitiva, somma, coprimi. \\
+%	
+%	\textbf{Problema 1.} [Feb 13] Determinare tutte le terne di interi strettamente positivi $ (a, b, c) $ tali che
+%	\begin{itemize}
+%		\item  $ a \leq b \leq c $;
+%		\item  $ MCD (a, b, c) = 1 $;
+%		\item  $ a $ è divisore di $ b + c $, $ b $ è divisore di $ c + a $ e $ c $ è divisore di $ a + b $.
+%	\end{itemize}
+%
+%	\begin{center}
+%		\textsc{Congruenze}
+%	\end{center}
+%	\begin{enumerate}
+%		\item  Che ora sarà tra esattamente $ 1000 $ ore?
+%		
+%		\textsf{Definizione, spiegazione, notazione...}
+%		
+%		\item What are the remainders when $ 3333 + 4444 $ and $ 3333 \cdot 4444 $ are divided by 5?
+%		
+%		\textsf{Osservazioni su come si comporta la congruenza contro le operazioni}
+%		
+%		\item What is the remainder when $ 2019^{2019} $ is divided by 2018?
+%		
+%		\textsf{Qualche parola sulla divisione}
+%		
+%		\item Is $ 21^{100} - 12^{100} $ a multiple of 11?
+%		
+%		\item What is the remainder when $ 7^{2019} $ is divided by 48?
+%
+%	\end{enumerate}
+%	
+%	\textbf{Problema 2.} Trovare la cifra delle unità di $ 3^{3^{\dots^3}} $, dove la cifra $ 3 $ compare ben cento volte. \\
+%	
+%	\textbf{Problema 3.} Trovare tutti i naturali $ n $ tali che \[ n + d(n) + d(d(n)) = 2019 \]
+%	
+%	\textsf{Qua si parla di criteri di divisibilità e criteri di congruenza!}\\
+%	
+%	\textbf{Problema 4.} Trovare tutte le terne di interi $ (a, b, c) $ tali che $$  a^2 + b^2 = 3c^2  $$
+%	
+%	\begin{center}
+%		\textsc{Numeri primi}
+%	\end{center}
+%	\textsf{Definizione. Albero?}\\
+%	
+%	\textbf{Problema 5.} 641 è primo? 2019 è primo? $ 1{00\dots 00}1 $ con 2019 zeri è primo? $ 4^{545} + 545^4 $ è primo? $ n^5 + n^4 +1 $ è primo? \\
+%	
+%	\textsf{Decidere se un numero è primo o meno non è, generalmente, un problema facile. Quando si chiede di farlo in genere si cerca una fattorizzazione esplicita!}\\
+%	
+%	\textbf{Infinitudine.} \\
+%	
+%	\textbf{Problema 6.} Quali primi si possono scrivere come somma di due quadrati? \\
+%
+%	\textbf{Teorema Fondamentale dell'Aritmetica.} \\
+%	
+%	\textbf{Problema 7.} Trovare tutte le terne di naturali $ (p, m, n) $ con $ p $ primo tali che
+%	\[ p^n +144 = m^2 \]
+%	
+%	
+%	\textsf{Non dovrebbe avanzare tempo, ma, se succede, si può parlare di quel poco che si sa sui numeri primi: ci sono buchi arbitrariamente grandi, tra $ n $ e $ 2n $ c'è almeno un numero primo, primi gemelli, primi di SG...}
+%	
+%	
+%	
+%\end{multicols}
+%
+%\newpage
+%
+%\begin{multicols}{2}
+%	\textsf{Voglio una lezione un po' più avanzata e un po meno specifica. L'argomento vorrebbe essere qualcosa del tipo "come si risolvono le diofantee"; l'introduzione è chiara: nessuno ha la più pallida idea di come si risolva una diofantea, in generale, magari con un bell'esempio mortale. Questo lascia intuire che i problemi delle Olimpiadi hanno la magica proprietà di avere sempre una soluzione elementare.}\\
+%	
+%	\textbf{Esempio mortale.} Sappiamo risolvere, negli interi positivi, 
+%	\[ \frac{a}{b+c} + \frac{b}{c+a} + \frac{c}{a + b} = n \]
+%	per $ n= 1 $ ma non per $ n=4 $.\\
+%
+%	\textbf{Teorema.} Siamo invece capaci di risolvere le diofantee lineari
+%	\[ ax+by = c. \]
+%	
+%	\textbf{Problema 2.} [SNS 16] Trovare tutte le coppie di interi $ (x, \, y) $ che risolvono
+%	$$  \dfrac{1}{x} + \dfrac{1}{y} = \dfrac{1}{6}.  $$
+%	Che cosa succede se metto $ 6^{20} $ al posto di $ 6 $?\\
+%	
+%	\textsf{Il discorso qui è che la grande strategia di sempre è cercare di fattorizzare l'equazione, perché conosciamo bene la struttura moltiplicativa di $ \mathbb{Z} $. Segue discorso sul numero di divisori.} \\
+%	
+%	\textbf{Problema 8.} [1991 IMO Short List] Find all positive integer solutions to $$  3^x + 4^y = 5^z.  $$
+%	
+%	\textsf{La seconda strategia mistica è guardare che cosa succede all'equazione ``mod $ m $''. Se non sanno le congruenze è potenzialmente un disastro.}\\
+%	
+%	\textbf{Problema 9.} Determinare quanti sono i numeri interi (relativi) $ n $ tali che
+%	\[n^2 + 85n + 2019\]
+%	\`e un quadrato perfetto.\\
+%	
+%	\textsf{Bisogna trovare un modo dolce di introdurre l'idea di stringere tra quadrati.} \\
+%	
+%	\textbf{Problema 13.} [Febbraio 13] Quante sono le coppie di interi ordinate $ (x, y) $ tali che \[ xy = 4(y^2 + x)? \]
+%	
+%	\textsf{Se siamo arrivati fino a qui e non è ancora finita, abbiamo sbagliato qualcosa. Del tipo: in realtà i bimbi non stanno capendo nulla perché siamo andati troppo in fretta, in realtà i bimbi dovrebbero cominciare a provare a risolvere la Congettura di Goldbach, in realtà sei nel posto sbagliato... Comunque, possiamo parlare delle terne pitagoriche.}\\
+%	
+%	\textbf{Teorema.} Trovare tutte le terne di interi positivi $ (a, b, c) $ tali per cui
+%	\[ a^2 + b^2 = c^2. \]
+%	
+%	
+%	%% --------------------------------------------------------------
+%	
+%	
+%	
+%	
+%	
+%\end{multicols}
+%
+%\textbf{Problemi}.
+%\begin{enumerate}
+%	\item Find $ 3x^2y^2 $
+%	if $ x $ and $ y $ are integers such that $ y^2+ 3x^2y^2= 30x^2 + 517. $ (AIME, 1987)
+%	
+%	\item The harmonic mean of two positive numbers is the reciprocal of the arithmetic mean of their reciprocals.
+%	For how many ordered pairs of positive integers $ (x,\, y) $ with $ x < y $ is the harmonic mean of $ x $ and $ y $
+%	equal to $ 6^{20} $? (AIME, 1996)
+%	
+%	\item The integer $ N $ is positive. There are exactly 2005 ordered pairs $ (x,\, y) $ of positive integers satisfying
+%	\[ \frac{1}{x}+ \frac{1}{y} = \frac{1}{N}. \]
+%	Prove that $ N $ is a perfect square. (British Mathematical Olympiad, 2005)
+%	
+%	\item [GHF] Non ci sono soluzioni intere di $ a^2b + ab^2 = x^3 $.
+%	
+%	\item Determinare per quanti valori interi di a il numero $ 2a^2+27a+91 $ risulta un quadrato perfetto.
+%	
+%	\item Determinare tutti gli interi positivi a con questa propriet\`a: comunque si scelga un intero
+%	positivo $ n $, il numero $ n(a + n) $ non \`e un quadrato perfetto.
+%	
+%	\item Determinare quante sono le coppie (p, m) in cui p `e un numero primo (e quindi positivo), m `e
+%	un numero intero (relativo) e
+%	\[p(m - 78p) = (m - 3)3 + 3p.\]
+%	
+%	\item  Determinare tutte le terne $ (p, x, y) $ in cui $ p $ \`e un numero primo e $ (x, y) $ \`e una coppia di numeri
+%	interi tali che
+%	\[	x^3
+%	(x^3 + y) = py^2
+%	.\]
+%	
+%	\item Determinare tutte le coppie $ (p, n) $ in cui $ p $ \`e un numero primo, $ n $ \`e un intero positivo e
+%	\[p^8 - p^4 = n^5 - n.\]
+%	
+%	\item [Cese 15] Determinare tutte le coppie di numeri interi $ (a, b) $ che risolvono l’equazione \[a^3 + b^3 + 3ab = 1.\]
+%	
+%	\item [Senior 19] Determinare tutte le coppie $ (a,\, b) $ di interi positivi per cui esiste un numero primo $ p $ tale che
+%	\[9^a + 3^a - 2 = 2p^b.\]
+%	
+%	\item  Trovare tutte le terne di numeri interi $ (a, b, c) $ tali che
+%	\[ a^2 + b^2 = 3c^2. \]
+%	
+%	% discesa infinita
+%	
+%	\item  [Ungheria] Let $ x $, $ y $, and $ z $ be rational numbers satisfying
+%	\[x^3 + 3y^3 + 9z^3 - 9xyz = 0.\]
+%	
+%	% stringere fra quadrati
+%	% vorrei anche un esercizio in cui questa cosa succede in modo più furbo: devo risolvere una quadratica e per farlo mi serve stringere fra quadrati
+%	
+%	
+%	\item  Determinare quante sono le coppie $ (m, n) $ di numeri interi (relativi) tali che
+%	\[n^2 - 6n = m^2 + m - 12.\]
+%	
+%	% fattorizzare: JFFT, polinomio da fattorizzare
+%	
+%	\item  Trovare tutte le terne di naturali $ (p, m, n) $ con $ p $ primo tali che
+%	\[ p^n +144 = m^2. \]
+%	
+%	
+%	% disuguaglianze per stringere i casi
+%	
+%	\item  Find all positive integers $ n $ such that $$  1 + 2^2 + 3^3 + 4^n  $$ is a perfect square.\\
+%	
+%	\item  Trovare tutte le terne di interi $ (x, y, z) $ per cui vale, per ogni $ n $, che \[ x^n + y^n + z^n = 0. \]
+%	
+%	\item  \[ m(n+3) = n^4 + 2016 \]
+%	
+%	
+%	
+%	% equazioni che bisogna saper risolvere: lineari, pitagorica, pell (che però non ti serviranno mai a nulla)
+%\end{enumerate}
+%
+%\newgeometry{left=3cm,bottom=0.1cm}
+%\Intitola
+%\normalsize
+%
+%
+%
+%\begin{enumerate}
+%	\item Dimostrare che, se $ p $ e $ p^2 +2 $ sono primi, anche $ p^3 +2 $ lo è.
+%	
+%	\item $  1 \cdot 3 \cdot 5 \cdots 2013 + 2 \cdot 4 \cdot 6 \cdots 2014  $ è divisibile per 2015?
+%	
+%	\item Trovare il resto quando:
+%	\begin{itemize}
+%		\item [(a)] 555 è diviso per 13 \\
+%		\item [(b)] $ 555^2$ è diviso per 13\\
+%		\item [(c)] $ 156 \cdot 167 $ è diviso per 7 \\
+%		\item [(d)] $ 24^{50} - 15^{50} $ è diviso per 13\\
+%		\item [(e)] $ 1 + 2 + \dots + 2007 $ è diviso per 1000\\
+%		\item [(f)] $ 5^{15} $ è diviso per 128\\
+%		\item [(g)]$  7^{7^7} $ è diviso per 10\\
+%		\item [(h)] $ 12^9 $ è diviso per 1000\\
+%	\end{itemize}
+%	
+%	
+%	\item Quante sono le coppie di interi ordinate $ (x, y) $ tali che $ xy = 4(y^2 + x) $? [Feb 13] \\
+%	
+%	\item Dato un qualsiasi intero positivo $ n $, chiamiamo ciclostilato di $ n $ il numero che si ottiene concatenando 2012 scritture di $ n $ (in base 10). Per esempio il ciclostilato di 314 è $ 314314314\dots314 $, dove le cifre “314” si ripetono 2012 volte.
+%	\begin{itemize}
+%		\item [(a)] Determinare tutti gli interi positivi $ m $ tali che il ciclostilato di $ m $ sia multiplo di 9.
+%		\item [(b)] Determinare tutti gli interi positivi $ m $ tali che il ciclostilato di $ m $ sia multiplo di 11.
+%	\end{itemize}
+%	
+%	
+%	\item Trovare tutte le coppie ordinate $ (x, y) $ di interi tali che $$  \dfrac{1}{x} + \dfrac{1}{y} = \dfrac{1}{6}  $$
+%	
+%\end{enumerate}
+%
+%\newgeometry{left=3cm,bottom=0.1cm}
+%\begin{center}
+%	\vspace*{0,5 cm}
+%	{\Huge \textsc{Teoria dei Numeri}} \\
+%	\vspace{0,5 cm}
+%	\textsc{\Author} \hspace{1cm} \textsc{25 luglio 2018 - Palermo}
+%	\thispagestyle{empty}
+%	\vspace{0,7 cm}
+%\end{center}
+%\normalsize
+%
+%\begin{enumerate}
+%	\item Dimostrare che, se $ p $ e $ p^2 +2 $ sono primi, anche $ p^3 +2 $ è primo.\\
+%	
+%	\item $  1 \cdot 3 \cdot 5 \cdots 3017 + 2 \cdot 4 \cdot 6 \cdots 3018  $ è divisibile per 3019?\\
+%	
+%	\item Esistono due interi positivi $ x $ e $ y $ tali che $ x+y $, $ x+2y $ e $ y+2x $ sono tutti e tre quadrati perfetti?\\
+%	
+%	\item Sia $ A = 77\dots 77 $ l'intero formato da 7777 cifre uguali a 7. Prendiamo la somma delle cifre di $ A^A $, dopodiché prendiamo la somma delle cifre di quanto ottenuto e ripetiamo il procedimento fino a quando non ci rimane un numero di una sola cifra. Di che numero si tratta?\\
+%	
+%	\item Un intero positivo $ n $ si dice \textit{bilanciato} se è prodotto di un numero pari di fattori primi. Dati due interi positivi $ a$ e $ b $, consideriamo il polinomio $ P(x) = (x+a)(x+b) $.
+%	Dimostrare che:
+%	\begin{itemize}
+%		\item [(i)] Si possono scegliere $ a $ e $ b $ in modo che $ P(1),\, P(2),\,\dots ,\, P(2018) $ siano tutti bilanciati.
+%		\item [(ii)] Se $ P(n) $ è bilanciato per ogni $ n $, allora $ a = b $.\\
+%	\end{itemize}
+%	
+%	\item \emph{Difficile}: \[2^{2^5} +1 {\text{ è primo?}}\]
+%	
+%\end{enumerate}
+%
+%\newgeometry{left=3cm,bottom=0.1cm}
+%\begin{center}
+%	\vspace*{0,5 cm}
+%	{\Huge \textsc{Teoria dei Numeri}} \\
+%	\vspace{0,5 cm}
+%	\textsc{Terni}
+%	\thispagestyle{empty}
+%	\vspace{0,7 cm}
+%\end{center}
+%\normalsize
+%
+%
+%
+%
+%\begin{enumerate}
+%	\item Trovare il resto quando:
+%	\begin{itemize}
+%		\item [(a)] 555 è diviso per 13
+%		\item [(b)] $ 555^2$ è diviso per 13
+%		\item [(c)] $ 156 \cdot 167 $ è diviso per 7
+%		\item [(d)] $ 24^{50} - 15^{50} $ è diviso per 13
+%		\item [(e)] $ 1 + 2 + \dots + 2007 $ è diviso per 1000
+%		\item [(f)] $ 5^{15} $ è diviso per 128
+%		\item [(g)]$  7^{7^7} $ è diviso per 10
+%		\item [(h)] $ 12^9 $ è diviso per 1000 \\
+%	\end{itemize}
+%	
+%	\item Esistono due interi positivi $ x $ e $ y $ tali che $ x+y $, $ x+2y $ e $ y+2x $ sono tutti e tre quadrati perfetti? \\
+%	
+%	\item (Febbraio 2012.) Dato un qualsiasi intero positivo $ n $, chiamiamo ciclostilato di $ n $ il numero che si ottiene concatenando 2012 scritture di $ n $ (in base 10). Per esempio il ciclostilato di 314 è $ 314314314\dots314 $, dove le cifre “314” si ripetono 2012 volte.
+%	\begin{itemize}
+%		\item [(a)] Determinare tutti gli interi positivi $ m $ tali che il ciclostilato di $ m $ sia multiplo di 9.
+%		\item [(b)] Determinare tutti gli interi positivi $ m $ tali che il ciclostilato di $ m $ sia multiplo di 11. \\
+%	\end{itemize}
+%	
+%	\item Se $ 2n + 1 $ e $ 3n + 1 $ sono quadrati perfetti, allora $ 5n + 3 $ non è un primo. \\
+%	
+%	\item[$ \star. $] (GAS 2014.) Ellisseo e i suoi compagni giungono nella grotta di Polinomio e scoprono ben presto che il ciclope possiede una
+%	gran quantità di pecore. Dividendo le pecore in gruppi da 5, ne avanzano 3, mentre dividendole in gruppi da 7 ne
+%	rimangono 2; infine dividendo le pecore in gruppi da 11, ne avanzano 7. Sapendo che ogni pecora ha 11 agnelli e che
+%	tutti gli agnelli sono meno di 5000, quanti sono gli agnelli?
+%	
+%\end{enumerate}
 
 \newgeometry{left=3cm,bottom=0.1cm}
 \begin{center}
@@ -506,12 +506,12 @@ $$  \boxed{2018 = 2 \cdot 1009}  $$
 	\item Trovare tutte le coppie $ (x, y) $ di interi relativi per cui vale
 	\[ 24x + 35y = 17. \]
 	
-	\item Find $ 3x^2y^2 $
-	if $ x $ and $ y $ are integers such that $ y^2+ 3x^2y^2= 30x^2 + 517. $ (AIME, 1987)\\
+	\item Trova $ 3x^2y^2 $,
+	sapendo che $ x $ e $ y $ sono interi tali che $ y^2+ 3x^2y^2= 30x^2 + 517. $ (AIME, 1987)\\
 	
-	\item The integer $ N $ is positive. There are exactly 2005 ordered pairs $ (x,\, y) $ of positive integers satisfying
+	\item Sia $ N $ un intero positivo. Sappiamo che ci sono esattamente 2005 coppie ordinate $ (x,\, y) $ di interi positivi che soddisfano
 	\[ \frac{1}{x}+ \frac{1}{y} = \frac{1}{N}. \]
-	Prove that $ N $ is a perfect square. (British Mathematical Olympiad, 2005)\\
+	Dimostrare che $ N $ è un quadrato perfetto. (British Mathematical Olympiad, 2005)\\
 	
 	\item  Determinare quante sono le coppie $ (m, n) $ di numeri interi (relativi) tali che
 	\[n^2 - 6n = m^2 + m - 12.\]
